@@ -1,0 +1,9 @@
+crab resubmit -d crab_projects/crab_HT50to100_TuneCP5 --maxjobruntime 2750 
+crab resubmit -d crab_projects/crab_HT100to200_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT200to300_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT300to500_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT500to700_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT700to1000_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT1000to1500_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT1500to2000_TuneCP5 --maxjobruntime 2750
+crab resubmit -d crab_projects/crab_HT2000toInf_TuneCP5 --maxjobruntime 2750

@@ -1,0 +1,2052 @@
+DEBUG 2022-09-24 13:41:49.559 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 13:41:49.559 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 13:41:49.559 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 13:41:49.559 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2022-09-24 13:41:49.562 UTC: 	 Will use CRAB configuration file crabConfig_Data_106x_analysis.py
+DEBUG 2022-09-24 13:41:49.562 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-09-24 13:41:49.562 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2022-09-24 13:41:49.563 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v4/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_JetHT_Run2017B_UL2017' already exists 
+Please change the requestName in the config file
+ERROR 2022-09-24 13:41:49.563 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v4/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_JetHT_Run2017B_UL2017' already exists 
+Please change the requestName in the config file
+INFO 2022-09-24 13:41:49.571 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v4/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab.log
+DEBUG 2022-09-24 14:10:52.540 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.541 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.541 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.541 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.542 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.559 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.559 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.559 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.559 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.560 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.575 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.575 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.575 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.575 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.576 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.593 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.593 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.593 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.593 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.594 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.610 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.610 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.610 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.610 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.611 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.627 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.627 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.627 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.627 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.628 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.643 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.643 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.644 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.644 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.644 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.660 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.661 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.661 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.661 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.661 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.678 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.678 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.678 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.678 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.679 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.695 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.695 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.695 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.695 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.696 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.712 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.712 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.712 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.712 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.713 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.729 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.729 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.729 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.729 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.730 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.745 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.746 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.746 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.746 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.746 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.762 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.763 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.763 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.763 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.764 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-09-24 14:10:52.780 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-24 14:10:52.780 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-09-24 14:10:52.780 UTC: 	 Executing command: 'submit'
+DEBUG 2022-09-24 14:10:52.780 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-09-24 14:10:52.781 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-10-17 08:19:04.562 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-10-17 08:19:04.563 UTC: 	 Running on: Linux lxplus754.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-10-17 08:19:04.563 UTC: 	 Executing command: 'submit'
+DEBUG 2022-10-17 08:19:04.563 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-10-17 08:19:04.564 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-10-31 08:56:23.124 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-10-31 08:56:23.124 UTC: 	 Running on: Linux lxplus714.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-10-31 08:56:23.124 UTC: 	 Executing command: 'status'
+DEBUG 2022-10-31 08:56:23.124 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2022-10-31 08:56:23.125 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+ERROR 2022-10-31 08:56:23.125 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+INFO 2022-10-31 08:56:23.155 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2022-10-31 08:56:23.451 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-10-31 08:56:23.451 UTC: 	 Running on: Linux lxplus714.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-10-31 08:56:23.451 UTC: 	 Executing command: 'status'
+DEBUG 2022-10-31 08:56:23.451 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2022-10-31 08:56:23.451 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2022-10-31 08:56:23.452 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2022-10-31 08:56:23.453 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2022-11-20 05:48:49.529 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.529 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.529 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.529 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.530 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.770 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.771 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.771 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.771 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.771 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.786 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.786 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.786 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.786 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.786 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.800 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.801 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.801 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.801 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.801 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.815 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.815 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.815 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.815 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.816 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.829 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.830 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.830 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.830 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.830 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.844 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.844 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.844 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.844 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.845 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.859 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.859 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.859 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.859 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.860 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-20 05:48:49.874 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-20 05:48:49.874 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-20 05:48:49.874 UTC: 	 Executing command: 'submit'
+DEBUG 2022-11-20 05:48:49.874 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-20 05:48:49.875 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2022-11-24 11:31:46.335 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-24 11:31:46.335 UTC: 	 Running on: Linux lxplus737.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-24 11:31:46.335 UTC: 	 Executing command: 'status'
+DEBUG 2022-11-24 11:31:46.335 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2022-11-24 11:31:46.337 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+ERROR 2022-11-24 11:31:46.337 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+INFO 2022-11-24 11:31:46.429 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2022-11-24 11:31:47.230 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-24 11:31:47.230 UTC: 	 Running on: Linux lxplus737.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-24 11:31:47.230 UTC: 	 Executing command: 'status'
+DEBUG 2022-11-24 11:31:47.231 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2022-11-24 11:31:47.231 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2022-11-24 11:31:47.232 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2022-11-24 11:31:47.235 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2022-11-25 04:53:35.893 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-25 04:53:35.894 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-25 04:53:35.894 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-11-25 04:53:35.895 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-25 05:14:17.771 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-25 05:14:17.771 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-25 05:14:17.771 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-11-25 05:14:17.771 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-26 04:58:52.332 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-26 04:58:52.333 UTC: 	 Running on: Linux lxplus729.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-26 04:58:52.333 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-11-26 04:58:52.333 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-11-29 04:28:48.910 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-11-29 04:28:48.910 UTC: 	 Running on: Linux lxplus793.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-11-29 04:28:48.910 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-11-29 04:28:48.910 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-02 04:22:21.572 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-02 04:22:21.572 UTC: 	 Running on: Linux lxplus716.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-02 04:22:21.572 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-02 04:22:21.572 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-02 14:18:48.972 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-02 14:18:48.973 UTC: 	 Running on: Linux lxplus716.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-02 14:18:48.973 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-02 14:18:48.973 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-04 05:45:32.218 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-04 05:45:32.219 UTC: 	 Running on: Linux lxplus746.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-04 05:45:32.219 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-04 05:45:32.219 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-04 18:25:52.415 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-04 18:25:52.415 UTC: 	 Running on: Linux lxplus737.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-04 18:25:52.415 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-04 18:25:52.415 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-06 07:38:26.968 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-06 07:38:26.969 UTC: 	 Running on: Linux lxplus789.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-06 07:38:26.969 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-06 07:38:26.969 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2022-12-06 18:55:30.207 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2022-12-06 18:55:30.207 UTC: 	 Running on: Linux lxplus774.cern.ch 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-12-06 18:55:30.207 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-12-06 18:55:30.207 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-09 18:58:36.513 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-09 18:58:36.514 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-09 18:58:36.514 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-09 18:58:36.514 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-09 18:58:36.514 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-09 19:09:58.088 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-09 19:09:58.088 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-09 19:09:58.088 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-09 19:09:58.088 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-09 19:09:58.089 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-09 19:09:58.089 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-09 19:09:58.094 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-10 04:43:57.529 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-10 04:43:57.529 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-10 04:43:57.529 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-10 04:43:57.529 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-10 04:43:57.530 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-10 04:43:57.530 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-10 04:43:57.593 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-10 06:05:47.080 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-10 06:05:47.080 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-10 06:05:47.080 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-10 06:05:47.080 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-10 06:05:47.081 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-10 06:05:47.081 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-10 06:05:47.086 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-10 08:52:39.842 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-10 08:52:39.843 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-10 08:52:39.843 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-10 08:52:39.843 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-10 08:52:39.843 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-10 08:52:39.844 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-10 08:52:39.849 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-10 11:46:39.754 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-10 11:46:39.754 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-10 11:46:39.754 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-10 11:46:39.754 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-10 11:46:39.755 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-10 11:46:39.755 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-10 11:46:39.777 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-11 09:48:02.806 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-11 09:48:02.806 UTC: 	 Running on: Linux lxplus797.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-11 09:48:02.806 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-11 09:48:02.806 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-11 09:48:02.807 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-11 09:48:02.807 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-11 09:48:02.929 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-16 10:25:15.794 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 10:25:15.794 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 10:25:15.794 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-16 10:25:15.796 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-16 10:25:15.914 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+ERROR 2023-01-16 10:25:15.914 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCP5_Flat_pythia8 is not a valid CRAB project directory.
+INFO 2023-01-16 10:25:16.027 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-16 10:25:16.501 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 10:25:16.501 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 10:25:16.501 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-16 10:25:16.501 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-16 10:25:16.501 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-16 10:25:16.502 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-16 10:25:16.504 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-16 10:45:39.779 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 10:45:39.779 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 10:45:39.779 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-16 10:45:39.779 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-16 10:45:39.782 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-16 10:45:39.782 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-16 10:45:39.788 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-16 13:58:30.061 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:30.062 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:30.062 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-16 13:58:30.062 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-16 13:58:30.062 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-16 13:58:30.063 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-16 13:58:30.130 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-16 13:58:33.691 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.691 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.692 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.692 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.692 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.729 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.729 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.729 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.729 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.729 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.771 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.772 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.772 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.772 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.772 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.812 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.812 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.812 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.812 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.812 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.884 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.884 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.884 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.884 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.885 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.923 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.923 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.923 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.923 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.924 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.955 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.955 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.955 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.955 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.956 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:33.979 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:33.980 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:33.980 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:33.980 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:33.980 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.000 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.001 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.001 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.001 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.001 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.063 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.063 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.063 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.063 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.064 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.119 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.120 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.120 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.120 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.120 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.151 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.151 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.151 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.151 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.152 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.192 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.192 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.192 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.192 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.193 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.255 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.255 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.255 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.255 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.255 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-16 13:58:34.292 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-16 13:58:34.293 UTC: 	 Running on: Linux lxplus752.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-16 13:58:34.293 UTC: 	 Executing command: 'submit'
+DEBUG 2023-01-16 13:58:34.293 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-16 13:58:34.293 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-01-17 04:38:43.647 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-17 04:38:43.647 UTC: 	 Running on: Linux lxplus736.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-17 04:38:43.647 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-17 04:38:43.647 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-17 04:38:43.648 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-17 04:38:43.648 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-17 04:38:43.693 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-17 18:36:58.242 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-17 18:36:58.242 UTC: 	 Running on: Linux lxplus707.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-17 18:36:58.242 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-17 18:36:58.242 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-17 18:36:58.243 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-17 18:36:58.243 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-17 18:36:58.323 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-18 09:58:23.079 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-18 09:58:23.079 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-18 09:58:23.079 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-18 09:58:23.080 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-18 09:58:23.081 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-18 09:58:23.081 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-18 09:58:23.362 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-18 09:58:47.863 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-18 09:58:47.864 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-18 09:58:47.864 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-01-18 09:58:47.864 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-18 10:03:21.283 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-18 10:03:21.283 UTC: 	 Running on: Linux lxplus765.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-18 10:03:21.283 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-01-18 10:03:21.283 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:09:50.473 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:09:50.474 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:09:50.474 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:09:50.474 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-20 07:09:50.475 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-20 07:09:50.475 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-20 07:09:50.508 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-20 07:13:09.531 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:13:09.531 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:13:09.531 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-01-20 07:13:09.532 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:06.712 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:06.713 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:06.713 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:06.713 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:07.266 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:07.267 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:07.267 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:07.267 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:07.783 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:07.784 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:07.784 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:07.784 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:08.336 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:08.336 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:08.336 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:08.336 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:08.953 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:08.953 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:08.953 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:08.953 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:10.082 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:10.082 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:10.082 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:10.083 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:10.627 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:10.627 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:10.627 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:10.627 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:11.187 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:11.187 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:11.187 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:11.188 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:11.748 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:11.748 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:11.748 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:11.748 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:12.314 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:12.314 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:12.314 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:12.315 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:12.844 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:12.844 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:12.844 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:12.844 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:13.329 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:13.329 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:13.329 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:13.329 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:13.845 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:13.846 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:13.846 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:13.846 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:14.372 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:14.373 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:14.373 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:14.373 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 07:14:14.857 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 07:14:14.857 UTC: 	 Running on: Linux lxplus734.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 07:14:14.857 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 07:14:14.857 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-01-20 10:24:49.658 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-20 10:24:49.658 UTC: 	 Running on: Linux lxplus766.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-20 10:24:49.658 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-20 10:24:49.658 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-20 10:24:49.659 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-20 10:24:49.660 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-20 10:24:49.669 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-21 06:58:38.457 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-21 06:58:38.458 UTC: 	 Running on: Linux lxplus726.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-21 06:58:38.458 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-21 06:58:38.458 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-21 06:58:38.459 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-21 06:58:38.459 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-21 06:58:38.583 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-21 19:04:14.062 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-21 19:04:14.062 UTC: 	 Running on: Linux lxplus746.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-21 19:04:14.062 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-21 19:04:14.062 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-21 19:04:14.063 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-21 19:04:14.063 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-21 19:04:14.105 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-24 05:20:28.581 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-24 05:20:28.581 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-24 05:20:28.581 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-24 05:20:28.581 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-24 05:20:28.582 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-24 05:20:28.582 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-24 05:20:28.922 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-28 11:06:20.561 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-28 11:06:20.561 UTC: 	 Running on: Linux lxplus725.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-28 11:06:20.561 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-28 11:06:20.562 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-28 11:06:20.562 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-28 11:06:20.563 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-28 11:06:20.600 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-30 09:35:30.119 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-30 09:35:30.119 UTC: 	 Running on: Linux lxplus714.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-30 09:35:30.119 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-30 09:35:30.120 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-30 09:35:30.120 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-30 09:35:30.121 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-30 09:35:30.206 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-31 10:18:12.877 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-31 10:18:12.877 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-31 10:18:12.877 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-31 10:18:12.877 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-31 10:18:12.878 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-31 10:18:12.878 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-31 10:18:12.979 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-31 10:26:30.957 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-31 10:26:30.957 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-31 10:26:30.957 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-31 10:26:30.957 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-31 10:26:30.958 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-31 10:26:30.958 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-31 10:26:31.223 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-01-31 14:12:36.953 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-31 14:12:36.954 UTC: 	 Running on: Linux lxplus743.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-31 14:12:36.954 UTC: 	 Executing command: 'status'
+DEBUG 2023-01-31 14:12:36.954 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-01-31 14:12:36.955 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-01-31 14:12:36.955 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-01-31 14:12:37.020 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-01 09:53:57.065 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-01 09:53:57.065 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-01 09:53:57.065 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-01 09:53:57.065 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-01 09:53:57.066 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-01 09:53:57.066 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-01 09:53:57.572 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-01 13:16:55.884 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-01 13:16:55.884 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-01 13:16:55.884 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-01 13:16:55.884 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-01 13:16:55.885 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-01 13:16:55.885 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-01 13:16:55.917 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-03 05:34:13.424 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-03 05:34:13.424 UTC: 	 Running on: Linux lxplus746.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-03 05:34:13.424 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-03 05:34:13.424 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-03 05:34:13.425 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-03 05:34:13.425 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-03 05:34:13.785 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-03 05:37:50.480 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-03 05:37:50.480 UTC: 	 Running on: Linux lxplus746.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-03 05:37:50.480 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-03 05:37:50.480 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-03 05:37:50.481 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-03 05:37:50.481 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-03 05:37:50.482 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-07 06:07:19.911 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-07 06:07:19.912 UTC: 	 Running on: Linux lxplus762.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-07 06:07:19.912 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-07 06:07:19.912 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-07 06:07:19.913 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-07 06:07:19.913 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-07 06:07:20.072 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-07 06:09:21.175 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-07 06:09:21.175 UTC: 	 Running on: Linux lxplus762.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-07 06:09:21.175 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-02-07 06:09:21.175 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-07 13:11:41.588 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-07 13:11:41.588 UTC: 	 Running on: Linux lxplus762.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-07 13:11:41.588 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-07 13:11:41.588 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-07 13:11:41.589 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-07 13:11:41.589 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-07 13:11:41.645 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-07 15:12:33.401 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-07 15:12:33.401 UTC: 	 Running on: Linux lxplus762.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-07 15:12:33.401 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-07 15:12:33.402 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-07 15:12:33.403 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-07 15:12:33.403 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-07 15:12:33.491 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-07 16:55:40.448 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-07 16:55:40.448 UTC: 	 Running on: Linux lxplus762.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-07 16:55:40.448 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-07 16:55:40.448 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-07 16:55:40.449 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-07 16:55:40.450 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-07 16:55:40.506 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-10 04:31:58.992 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-10 04:31:58.992 UTC: 	 Running on: Linux lxplus737.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-10 04:31:58.992 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-10 04:31:58.993 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-10 04:31:58.993 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-10 04:31:58.993 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-10 04:31:59.050 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-10 07:23:49.469 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-02-10 07:23:49.469 UTC: 	 Running on: Linux lxplus737.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-10 07:23:49.469 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-10 07:23:49.469 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-10 07:23:49.470 UTC: 	 Error: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+ERROR 2023-02-10 07:23:49.470 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Pt-15to7000_TuneCH3_Flat_herwig7 is not a valid CRAB project directory.
+INFO 2023-02-10 07:23:49.554 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JetChargeAnalysis_v5/CMSSW_10_6_29/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-11 17:50:51.241 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-11 17:50:51.241 UTC: 	 Running on: Linux lxplus732.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-11 17:50:51.241 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-02-11 17:50:51.241 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-17 05:36:50.833 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-17 05:36:50.834 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-17 05:36:50.834 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-02-17 05:36:50.834 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-17 05:37:01.845 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-17 05:37:01.846 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-17 05:37:01.846 UTC: 	 Executing command: 'resubmit'
+DEBUG 2023-02-17 05:37:01.846 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-18 12:18:01.159 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-18 12:18:01.160 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-18 12:18:01.160 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-18 12:18:01.161 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-18 12:18:01.163 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-18 12:18:01.163 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-18 12:18:01.178 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-18 12:18:01.179 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-18 12:18:01.179 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-18 12:18:01.310 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-18 12:18:16.344 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-18 12:18:16.344 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-18 12:18:16.344 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-18 12:18:16.344 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-18 12:18:16.345 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-18 12:18:16.345 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-18 12:18:16.345 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-18 12:18:16.346 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-18 12:18:16.346 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-18 12:18:16.348 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-18 12:18:28.941 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-18 12:18:28.941 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-18 12:18:28.941 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-18 12:18:28.942 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-18 12:18:28.942 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-18 12:18:28.942 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-18 12:18:28.943 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-18 12:18:28.943 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-18 12:18:28.943 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-18 12:18:28.945 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 09:55:35.751 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 09:55:35.751 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 09:55:35.752 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 09:55:35.753 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 09:55:35.754 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 09:55:35.754 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-20 09:55:35.756 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-20 09:55:35.756 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-20 09:55:35.757 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-20 09:55:35.879 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 10:04:32.551 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:04:32.552 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:04:32.552 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:04:32.561 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-20 10:05:37.753 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:05:37.753 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:05:37.753 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:05:37.757 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 10:05:37.760 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 10:05:37.760 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-20 10:05:37.765 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-20 10:05:37.765 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-20 10:05:37.765 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-20 10:05:37.781 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 10:07:56.909 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:07:56.909 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:07:56.909 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:07:56.911 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 10:07:56.912 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 10:07:56.912 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-20 10:07:56.914 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-20 10:07:56.915 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-20 10:07:56.915 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-20 10:07:56.928 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 10:08:00.143 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:08:00.143 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:08:00.143 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:08:00.143 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 10:08:00.144 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 10:08:00.145 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-20 10:08:00.145 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-20 10:08:00.146 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-20 10:08:00.146 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-20 10:08:00.149 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 10:08:13.233 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:08:13.233 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:08:13.233 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:08:13.233 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 10:08:13.234 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 10:08:13.235 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-20 10:08:13.235 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-20 10:08:13.236 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-20 10:08:13.236 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-20 10:08:13.246 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-20 10:52:42.490 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-20 10:52:42.490 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-20 10:52:42.490 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-20 10:52:42.495 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-20 10:52:42.499 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-20 10:52:42.499 UTC: 	 Loading CRAB configuration file.
+INFO 2023-02-20 10:52:42.500 UTC: 	 Wrong format in command-line argument '--dryrun'. Expected format is <section-name>.<parameter-name>=<parameter-value>.
+INFO 2023-02-20 10:52:42.501 UTC: 	 If the argument '--dryrun' is an option to the submit command, try 'crab submit --dryrun [value for --dryrun option (if required)] [arguments]'.
+ERROR 2023-02-20 10:52:42.501 UTC: 	 ERROR: Wrong command-line format.
+ERROR 2023-02-20 10:52:42.501 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-dev/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-dev/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-dev/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-dev/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-dev/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 67, in loadConfig
+    raise ConfigurationException("ERROR: Wrong command-line format.")
+ConfigurationException: ERROR: Wrong command-line format.
+INFO 2023-02-20 10:52:42.590 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-21 03:51:46.293 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-21 03:51:46.294 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-21 03:51:46.294 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-21 03:51:46.294 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-21 03:51:46.295 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-21 03:51:46.295 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-02-21 03:51:46.392 UTC: 	 The 'maxJobRuntimeMin' parameter is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-02-21 03:51:46.392 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 94, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: The 'maxJobRuntimeMin' parameter is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-02-21 03:51:46.436 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-21 03:51:57.648 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-21 03:51:57.649 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-21 03:51:57.649 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-21 03:51:57.649 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-21 03:51:57.650 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-21 03:51:57.650 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-02-21 03:51:57.650 UTC: 	 The 'maxJobRuntimeMin' parameter is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-02-21 03:51:57.650 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 94, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: The 'maxJobRuntimeMin' parameter is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-02-21 03:51:57.652 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-21 03:52:13.698 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-21 03:52:13.698 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-21 03:52:13.698 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-21 03:52:13.698 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-21 03:52:13.699 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-21 03:52:13.699 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-02-21 03:52:13.946 UTC: 	 The 'dryrun' option is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-02-21 03:52:13.946 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 94, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: The 'dryrun' option is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-02-21 03:52:13.948 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-21 03:52:30.531 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-21 03:52:30.531 UTC: 	 Running on: Linux lxplus776.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-21 03:52:30.531 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-21 03:52:30.532 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-21 03:52:30.532 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-21 03:52:30.532 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-02-21 03:52:30.533 UTC: 	 The 'dryrun' option is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-02-21 03:52:30.533 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 94, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: The 'dryrun' option is not compatible with the 'Automatic' splitting mode (default).
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-02-21 03:52:30.535 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Test/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-22 20:20:23.195 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-22 20:20:23.196 UTC: 	 Running on: Linux lxplus761.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-22 20:20:23.196 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-22 20:20:23.197 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-22 20:20:23.243 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-22 20:20:23.243 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-22 20:20:23.262 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-22 20:20:23.265 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-22 20:20:23.265 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_02072022' already exists 
+Please change the requestName in the config file
+INFO 2023-02-22 20:20:23.330 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-23 05:57:55.485 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-23 05:57:55.485 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-23 05:57:55.486 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-23 05:57:55.486 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-23 05:57:55.486 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-23 05:57:55.486 UTC: 	 Loading CRAB configuration file.
+ERROR 2023-02-23 05:57:55.493 UTC: 	 Invalid CRAB configuration: Parameter Data.unitsPerJob is mandatory for 'EventBased' splitting mode.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2023-02-23 05:57:55.493 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 94, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Invalid CRAB configuration: Parameter Data.unitsPerJob is mandatory for 'EventBased' splitting mode.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2023-02-23 05:57:55.526 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-23 06:04:26.577 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-23 06:04:26.578 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-23 06:04:26.578 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-23 06:04:26.578 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+INFO 2023-02-23 06:04:26.578 UTC: 	 Will use CRAB configuration file crabConfig_MC_flat_pythia8.py
+DEBUG 2023-02-23 06:04:26.578 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-02-23 06:04:26.581 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-02-23 06:04:26.582 UTC: 	 Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_23Feb2023' already exists 
+Please change the requestName in the config file
+ERROR 2023-02-23 06:04:26.582 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab_projects/crab_JetCharge_TuneCP5_Flat_13TeV_pythia8_23Feb2023' already exists 
+Please change the requestName in the config file
+INFO 2023-02-23 06:04:26.592 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_Binning/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-02-23 08:45:08.866 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-23 08:45:08.867 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-23 08:45:08.867 UTC: 	 Executing command: 'submit'
+DEBUG 2023-02-23 08:45:08.868 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-02-23 08:45:08.869 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-02-25 20:26:18.858 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-02-25 20:26:18.859 UTC: 	 Running on: Linux lxplus769.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-02-25 20:26:18.859 UTC: 	 Executing command: 'status'
+DEBUG 2023-02-25 20:26:18.859 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-02-25 20:26:18.859 UTC: 	 Error: crab_Pt-15to7000_TuneCP5_Flat_pythia8/ is not a valid CRAB project directory.
+ERROR 2023-02-25 20:26:18.859 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_Pt-15to7000_TuneCP5_Flat_pythia8/ is not a valid CRAB project directory.
+INFO 2023-02-25 20:26:18.882 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-03-03 07:06:27.791 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:06:27.792 UTC: 	 Running on: Linux lxplus748.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:06:27.792 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:06:27.793 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:06:27.794 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:06:27.794 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:06:27.794 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:06:27.794 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:06:28.300 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:06:28.300 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:06:28.300 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:06:28.689 UTC: 	 output : 0
+0
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:06:28.689 UTC: 	 Proxy valid for 00:00:00 hours
+DEBUG 2023-03-03 07:06:28.689 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2023-03-03 07:06:28.689 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /tmp/x509up_u124615 --valid 192:00 --voms cms:/cms
+DEBUG 2023-03-03 07:06:34.879 UTC: 	 output : 
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:06:34.879 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 output : 691198
+691198
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Proxy created.
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Options use: ['--site', '=T2_IN_TIFR']
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:06:35.248 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:06:36.115 UTC: 	 username is sobarman
+INFO 2023-03-03 07:06:36.116 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:06:36.116 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:06:36.116 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:06:36.140 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:06:36.140 UTC: 	 Will check write permission in /store/user/sobarman on site =T2_IN_TIFR
+INFO 2023-03-03 07:06:39.151 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:06:39.151 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:06:39.151 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-55Ek4c.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:07:09.714 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:07:09.715 UTC: 	 Running on: Linux lxplus748.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:07:09.715 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:07:09.715 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:07:09.716 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:07:09.716 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:07:09.716 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:07:09.716 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:07:10.145 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:07:10.145 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:07:10.145 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 output : 691163
+691163
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Proxy valid for 191:59:23 hours
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Options use: ['--site', '=T2_IN_TIFR']
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:07:10.535 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:07:10.536 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:07:11.304 UTC: 	 username is sobarman
+INFO 2023-03-03 07:07:11.304 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:07:11.305 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:07:11.305 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:07:11.317 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:07:11.317 UTC: 	 Will check write permission in /store/user/sobarman on site =T2_IN_TIFR
+INFO 2023-03-03 07:07:12.242 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:07:12.242 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T2_IN_TIFR' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:07:12.243 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-pYvSnx.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:08:07.009 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:08:07.009 UTC: 	 Running on: Linux lxplus748.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:08:07.009 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:08:07.009 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:08:07.010 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:08:07.011 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:07.011 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:08:07.011 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:07.414 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:08:07.414 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:08:07.414 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:07.801 UTC: 	 output : 691106
+691106
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:08:07.801 UTC: 	 Proxy valid for 191:58:26 hours
+DEBUG 2023-03-03 07:08:07.801 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:08:07.801 UTC: 	 Options use: ['--site', '=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:08:07.801 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:08:07.802 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:08:07.802 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:08:07.802 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:08:26.367 UTC: 	 username is sobarman
+INFO 2023-03-03 07:08:26.368 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:08:26.368 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:08:26.368 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:08:26.381 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:08:26.381 UTC: 	 Will check write permission in /store/user/sobarman on site =T3_US_FNALLPC
+INFO 2023-03-03 07:08:27.336 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:08:27.336 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:08:27.336 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-nRJpMb.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:08:48.045 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:08:48.045 UTC: 	 Running on: Linux lxplus748.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:08:48.045 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:08:48.045 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:08:48.046 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:08:48.046 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:48.046 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:08:48.046 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:48.406 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:08:48.406 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:08:48.406 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:08:48.774 UTC: 	 output : 43194
+43194
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:08:48.774 UTC: 	 Proxy valid for 11:59:54 hours
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Options use: ['--site', '=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:08:48.775 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:08:49.595 UTC: 	 username is sobarman
+INFO 2023-03-03 07:08:49.596 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:08:49.596 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:08:49.596 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:08:49.605 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:08:49.605 UTC: 	 Will check write permission in /store/user/sobarman on site =T3_US_FNALLPC
+INFO 2023-03-03 07:08:50.482 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:08:50.482 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:08:50.482 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-okL3MT.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:09:46.430 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:09:46.431 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:09:46.431 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:09:46.432 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:09:46.433 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:09:46.433 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:09:46.433 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:09:46.433 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:09:46.886 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:09:46.886 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:09:46.886 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:09:47.311 UTC: 	 output : 43191
+43190
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Proxy valid for 11:59:50 hours
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Options use: ['--site', '=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:09:47.312 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:09:48.052 UTC: 	 username is sobarman
+INFO 2023-03-03 07:09:48.053 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:09:48.053 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:09:48.053 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:09:48.080 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:09:48.080 UTC: 	 Will check write permission in /store/user/sobarman on site =T3_US_FNALLPC
+INFO 2023-03-03 07:09:49.831 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:09:49.831 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:09:49.831 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-NjhW1G.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:10:15.699 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:10:15.699 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:10:15.699 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:10:15.699 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:10:15.700 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:10:15.701 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:15.701 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:10:15.701 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:16.128 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:10:16.128 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:10:16.128 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:16.568 UTC: 	 output : 43162
+43161
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:10:16.568 UTC: 	 Proxy valid for 11:59:21 hours
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Options use: ['--site', '=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:10:16.569 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:10:17.295 UTC: 	 username is sobarman
+INFO 2023-03-03 07:10:17.295 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:10:17.295 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:10:17.295 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:10:17.305 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:10:17.305 UTC: 	 Will check write permission in /store/user/sobarman on site =T3_US_FNALLPC
+INFO 2023-03-03 07:10:18.434 UTC: 	 PFN lookup failed
+INFO 2023-03-03 07:10:18.434 UTC: 	   Stdout:
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    Failed to resolve LNF to PFN via Rucio. Error is:
+     RSE does not exist.
+    Details: RSE '=T3_US_FNALLPC' cannot be found in vo 'def'
+    
+INFO 2023-03-03 07:10:18.434 UTC: 	   Stderr:
+    Traceback (most recent call last):
+      File "/tmp/crab_lfn2pfn-0AXafR.py", line 13, in <module>
+        if not out:
+    NameError: name 'out' is not defined
+    
+DEBUG 2023-03-03 07:10:50.026 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:10:50.027 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:10:50.027 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:10:50.027 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:10:50.027 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:10:50.028 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:50.028 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:10:50.028 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:50.477 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:10:50.477 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:10:50.477 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 output : 43128
+43127
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Proxy valid for 11:58:47 hours
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Options use: ['--site=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:10:50.945 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:10:51.674 UTC: 	 username is sobarman
+INFO 2023-03-03 07:10:51.674 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:10:51.675 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:10:51.675 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:10:51.690 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:10:51.690 UTC: 	 Will check write permission in /store/user/sobarman on site T3_US_FNALLPC
+INFO 2023-03-03 07:10:52.895 UTC: 	 Will use PFN: davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/crab3checkwrite_20230303_081051.tmp
+INFO 2023-03-03 07:10:52.895 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20230303_081051 and copy (dummy) file crab3checkwrite_20230303_081051.tmp to /store/user/sobarman
+
+INFO 2023-03-03 07:10:52.899 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081051.tmp 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/crab3checkwrite_20230303_081051.tmp'
+INFO 2023-03-03 07:10:52.899 UTC: 	 Please wait...
+INFO 2023-03-03 07:10:56.187 UTC: 	 
+Successfully created directory crab3checkwrite_20230303_081051 and copied file crab3checkwrite_20230303_081051.tmp to /store/user/sobarman
+INFO 2023-03-03 07:10:56.187 UTC: 	 
+Attempting to delete file davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/crab3checkwrite_20230303_081051.tmp
+
+INFO 2023-03-03 07:10:56.187 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/crab3checkwrite_20230303_081051.tmp'
+INFO 2023-03-03 07:10:56.187 UTC: 	 Please wait...
+INFO 2023-03-03 07:10:57.767 UTC: 	 
+Successfully deleted file davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/crab3checkwrite_20230303_081051.tmp
+INFO 2023-03-03 07:10:57.767 UTC: 	 
+Attempting to delete directory davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/
+
+INFO 2023-03-03 07:10:57.767 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/'
+INFO 2023-03-03 07:10:57.767 UTC: 	 Please wait...
+INFO 2023-03-03 07:10:59.525 UTC: 	 
+Successfully deleted directory davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081051/
+INFO 2023-03-03 07:10:59.537 UTC: 	 
+Checkwrite Result:
+INFO 2023-03-03 07:10:59.537 UTC: 	 Success: Able to write in /store/user/sobarman on site T3_US_FNALLPC
+DEBUG 2023-03-03 07:11:11.078 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:11:11.079 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:11:11.079 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:11:11.079 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:11:11.080 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:11:11.080 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:11:11.080 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:11:11.080 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:11:11.505 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:11:11.505 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:11:11.505 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 output : 43107
+43106
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Proxy valid for 11:58:26 hours
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Options use: ['--site=T2_IN_TIFR']
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:11:11.926 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:11:11.927 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:11:12.700 UTC: 	 username is sobarman
+INFO 2023-03-03 07:11:12.700 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:11:12.700 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:11:12.700 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:11:12.711 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:11:12.711 UTC: 	 Will check write permission in /store/user/sobarman on site T2_IN_TIFR
+INFO 2023-03-03 07:11:13.731 UTC: 	 Will use PFN: davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+INFO 2023-03-03 07:11:13.731 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20230303_081112 and copy (dummy) file crab3checkwrite_20230303_081112.tmp to /store/user/sobarman
+
+INFO 2023-03-03 07:11:13.735 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081112.tmp 'davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp'
+INFO 2023-03-03 07:11:13.735 UTC: 	 Please wait...
+INFO 2023-03-03 07:11:23.854 UTC: 	 Failed running copy command
+INFO 2023-03-03 07:11:23.854 UTC: 	   Stdout:
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    Copying 85 bytes file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081112.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    event: [1677827482682] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+    event: [1677827482682] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081112.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    event: [1677827482682] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+    event: [1677827482682] BOTH   http_plugin	PREPARE:ENTER	file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081112.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081112/crab3checkwrite_20230303_081112.tmp
+    
+INFO 2023-03-03 07:11:23.854 UTC: 	   Stderr:
+    gfal-copy error: 1 (Operation not permitted) - DESTINATION OVERWRITE   HTTP 403 : Permission refused 
+    
+INFO 2023-03-03 07:11:23.893 UTC: 	 
+Checkwrite Result:
+INFO 2023-03-03 07:11:23.893 UTC: 	 Unable to check write permission in /store/user/sobarman on site T2_IN_TIFR
+Please try again later or contact the site administrators sending them the 'crab checkwrite' output as printed above.
+INFO 2023-03-03 07:11:23.893 UTC: 	 Note: You cannot write to a site if you did not ask permission.
+DEBUG 2023-03-03 07:12:35.098 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:12:35.098 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:12:35.098 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:12:35.098 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:12:35.099 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:12:35.099 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:35.099 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:12:35.099 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:35.891 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:12:35.891 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:12:35.891 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:36.561 UTC: 	 output : 43022
+43021
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Proxy valid for 11:57:01 hours
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Options use: ['--site=T2_IN_TIFR']
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:12:36.562 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:12:37.347 UTC: 	 username is sobarman
+INFO 2023-03-03 07:12:37.348 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:12:37.348 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:12:37.348 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:12:37.369 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:12:37.370 UTC: 	 Will check write permission in /store/user/sobarman on site T2_IN_TIFR
+INFO 2023-03-03 07:12:39.441 UTC: 	 Will use PFN: davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+INFO 2023-03-03 07:12:39.442 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20230303_081237 and copy (dummy) file crab3checkwrite_20230303_081237.tmp to /store/user/sobarman
+
+INFO 2023-03-03 07:12:39.446 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081237.tmp 'davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp'
+INFO 2023-03-03 07:12:39.446 UTC: 	 Please wait...
+INFO 2023-03-03 07:12:43.761 UTC: 	 Failed running copy command
+INFO 2023-03-03 07:12:43.761 UTC: 	   Stdout:
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    Copying 85 bytes file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081237.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    event: [1677827562614] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+    event: [1677827562614] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081237.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    event: [1677827562615] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+    event: [1677827562615] BOTH   http_plugin	PREPARE:ENTER	file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081237.tmp => davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    WARNING (SEToken) Could not retrieve any token for davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/user/sobarman/crab3checkwrite_20230303_081237/crab3checkwrite_20230303_081237.tmp
+    
+INFO 2023-03-03 07:12:43.762 UTC: 	   Stderr:
+    gfal-copy error: 1 (Operation not permitted) - DESTINATION OVERWRITE   HTTP 403 : Permission refused 
+    
+INFO 2023-03-03 07:12:43.821 UTC: 	 
+Checkwrite Result:
+INFO 2023-03-03 07:12:43.821 UTC: 	 Unable to check write permission in /store/user/sobarman on site T2_IN_TIFR
+Please try again later or contact the site administrators sending them the 'crab checkwrite' output as printed above.
+INFO 2023-03-03 07:12:43.821 UTC: 	 Note: You cannot write to a site if you did not ask permission.
+DEBUG 2023-03-03 07:12:50.617 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-03 07:12:50.617 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.81.1.el7.x86_64 #1 SMP Fri Dec 16 17:29:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-03 07:12:50.617 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-03-03 07:12:50.617 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-03 07:12:50.618 UTC: 	 Checking credentials
+DEBUG 2023-03-03 07:12:50.618 UTC: 	 Found proxy file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:50.618 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-03-03 07:12:50.618 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:51.257 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:12:51.258 UTC: 	 Getting proxy life time left
+DEBUG 2023-03-03 07:12:51.258 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u124615
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 output : 43007
+43006
+
+ error: 
+ retcode : 0
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Proxy valid for 11:56:46 hours
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Command use: checkwrite
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Options use: ['--site=T3_US_FNALLPC']
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Instance is None
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Server base url is None
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Retrieving username ...
+DEBUG 2023-03-03 07:12:51.841 UTC: 	 Retrieving username from CRIC...
+DEBUG 2023-03-03 07:12:52.704 UTC: 	 username is sobarman
+INFO 2023-03-03 07:12:52.704 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2023-03-03 07:12:52.704 UTC: 	 Validating LFN /store/user/sobarman...
+INFO 2023-03-03 07:12:52.705 UTC: 	 LFN /store/user/sobarman is valid.
+INFO 2023-03-03 07:12:52.729 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2023-03-03 07:12:52.730 UTC: 	 Will check write permission in /store/user/sobarman on site T3_US_FNALLPC
+INFO 2023-03-03 07:12:54.274 UTC: 	 Will use PFN: davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/crab3checkwrite_20230303_081252.tmp
+INFO 2023-03-03 07:12:54.274 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20230303_081252 and copy (dummy) file crab3checkwrite_20230303_081252.tmp to /store/user/sobarman
+
+INFO 2023-03-03 07:12:54.283 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab3checkwrite_20230303_081252.tmp 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/crab3checkwrite_20230303_081252.tmp'
+INFO 2023-03-03 07:12:54.283 UTC: 	 Please wait...
+INFO 2023-03-03 07:12:57.017 UTC: 	 
+Successfully created directory crab3checkwrite_20230303_081252 and copied file crab3checkwrite_20230303_081252.tmp to /store/user/sobarman
+INFO 2023-03-03 07:12:57.018 UTC: 	 
+Attempting to delete file davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/crab3checkwrite_20230303_081252.tmp
+
+INFO 2023-03-03 07:12:57.018 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/crab3checkwrite_20230303_081252.tmp'
+INFO 2023-03-03 07:12:57.018 UTC: 	 Please wait...
+INFO 2023-03-03 07:12:58.847 UTC: 	 
+Successfully deleted file davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/crab3checkwrite_20230303_081252.tmp
+INFO 2023-03-03 07:12:58.848 UTC: 	 
+Attempting to delete directory davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/
+
+INFO 2023-03-03 07:12:58.848 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/'
+INFO 2023-03-03 07:12:58.848 UTC: 	 Please wait...
+INFO 2023-03-03 07:13:00.826 UTC: 	 
+Successfully deleted directory davs://cmseos.fnal.gov:9000/eos/uscms/store/user/sobarman/crab3checkwrite_20230303_081252/
+INFO 2023-03-03 07:13:00.871 UTC: 	 
+Checkwrite Result:
+INFO 2023-03-03 07:13:00.871 UTC: 	 Success: Able to write in /store/user/sobarman on site T3_US_FNALLPC
+DEBUG 2023-03-21 18:18:38.734 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-21 18:18:38.735 UTC: 	 Running on: Linux lxplus732.cern.ch 3.10.0-1160.83.1.el7.x86_64 #1 SMP Wed Jan 25 16:41:43 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-21 18:18:38.735 UTC: 	 Executing command: 'status'
+DEBUG 2023-03-21 18:18:38.735 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+ERROR 2023-03-21 18:18:38.736 UTC: 	 Error: crab_ is not a valid CRAB project directory.
+ERROR 2023-03-21 18:18:38.736 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230124.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_ is not a valid CRAB project directory.
+INFO 2023-03-21 18:18:38.786 UTC: 	 Log file is /afs/cern.ch/work/s/sobarman/private/JCO_25Feb2023/CMSSW_10_6_30/src/Test/QCDEventShape/test/crab.log
+DEBUG 2023-03-23 13:17:27.991 UTC: 	 CRAB Client version: v3.230124
+DEBUG 2023-03-23 13:17:27.991 UTC: 	 Running on: Linux lxplus775.cern.ch 3.10.0-1160.83.1.el7.x86_64 #1 SMP Wed Jan 25 16:41:43 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-03-23 13:17:27.991 UTC: 	 Executing command: 'submit'
+DEBUG 2023-03-23 13:17:27.992 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sobarman/.crab3
+DEBUG 2023-03-23 13:17:28.006 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
