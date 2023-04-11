@@ -71,10 +71,10 @@ def main():
                 config.Data.inputDBS = 'global'
 		config.JobType.inputFiles= ["Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt","Summer19UL17_JRV2_MC_SF_AK4PFchs.txt","Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt"]
 
-#               config.JobType.maxMemoryMB = 2500
+                config.JobType.maxMemoryMB = 2500
 #               config.JobType.priority = 9999
-		config.JobType.maxJobRuntimeMin = 3000
-		config.JobType.numCores = 2
+		#config.JobType.maxJobRuntimeMin = 3000
+		#config.JobType.numCores = 2
 #               config.Data.splitting = 'EventAwareLumiBased'
                 config.Data.splitting = 'FileBased'
                 config.Data.unitsPerJob = 1
