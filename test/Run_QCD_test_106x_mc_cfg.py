@@ -6,6 +6,10 @@ process = cms.Process("Test")
 #process.options.allowUnscheduled = cms.untracked.bool(True)
 #process.Tracer = cms.Service("Tracer")
 
+process.options = cms.untracked.PSet(
+    SkipEvent = cms.untracked.vstring('ProductNotFound')
+)
+
 process.load("PhysicsTools.PatAlgos.producersLayer1.patCandidates_cff")
 process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
@@ -19,9 +23,9 @@ process.source = cms.Source("PoolSource",
 #eventRanges = cms.untracked.VEventRange('1:1000-1:2000'),
 )
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(30000) )
 
@@ -43,7 +47,6 @@ process.load("PhysicsTools.PatAlgos.patSequences_cff")
 #process.load("HLTrigger.HLTcore.hltPrescaleRecorder_cfi")
 
 process.options = cms.untracked.PSet(
-
 )
 
 #Setup FWK for multithreaded
@@ -147,7 +150,17 @@ process.analyzeBasicPat = cms.EDAnalyzer("QCDEventShape",
 #  PtThreshold = cms.untracked.double(12.0),
   	EtaRange =  cms.untracked.double(3.0),
   	PtThreshold = cms.untracked.double(55.0), #effective is 21
-  	LeadingPtThreshold = cms.untracked.double(150.0), #effective is 81       
+  	LeadingPtThreshold = cms.untracked.double(150.0), #effective is 81     
+        tracks = cms.InputTag("generalTracks"), 
+        filterGoodVertices = cms.InputTag("Flag_goodVertices"),
+	filterglobalSuperTightHalo2016Filter  = cms.InputTag("Flag_globalSuperTightHalo2016Filter"),
+	filterHBHENoiseFilter = cms.InputTag("Flag_HBHENoiseFilter"),
+	filterHBHENoiseIsoFilter = cms.InputTag("Flag_HBHENoiseIsoFilter"),
+	filterEcalDeadCellTriggerPrimitiveFilter = cms.InputTag("Flag_EcalDeadCellTriggerPrimitiveFilter"),
+	filterBadPFMuonFilter = cms.InputTag("Flag_BadPFMuonFilter"),
+	filterBadPFMuonDzFilter = cms.InputTag("Flag_BadPFMuonDzFilter"),
+	filtereeBadScFilter = cms.InputTag("Flag_eeBadScFilter"),
+	filterecalBadCalibFilter = cms.InputTag("Flag_ecalBadCalibFilter"), 
 #        scaleFactorsFile = cms.FileInPath('xxCondFormats/JetMETObjects/data/Summer15_V0_MC_JER_AK4PFchs.txt'),
 #        resolutionsFile = cms.FileInPath('xxCondFormats/JetMETObjects/data/Summer15_V0_MC_JER_AK4PFchs.txt'),
 #        scaleFactorsFile = cms.FileInPath('Test/QCDEventShape/test/Fall15_25nsV2_MC_SF_AK4PFchs.txt'),

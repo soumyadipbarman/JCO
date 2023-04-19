@@ -171,7 +171,7 @@ static const int nvar=32;
 static const int nhist=10;
 static const int typen=2; 
 static const int nHLTmx=10;
-static const int PTbins=3;
+//static const int PTbins=3;
 
 const int ndef=3;
 const int njet=2;
@@ -252,17 +252,23 @@ double genmax[ndef][njet][nkappa]={{{4.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0},{4
                                         {{0.4,0.6,0.6,0.6,0.6,0.8,0.8,0.8,1.0,1.0},{0.4,0.6,0.6,0.6,0.6,0.8,0.8,0.8,1.0,1.0}},
                                         {{0.4,0.4,0.4,0.4,0.6,0.6,0.8,0.8,0.8,0.8},{0.4,0.4,0.4,0.4,0.6,0.6,0.8,0.8,0.8,0.8}}};
 
-
+/*
 const int nreco_d0j0k1 =40;
 double recorang_d0j0k1[nreco_d0j0k1+1]={-1,-0.95,-0.9,-0.85,-0.8,-0.75,-0.7,-0.65,-0.6,-0.55,-0.5,-0.45,-0.4,-0.35,-0.3,-0.25,-0.2,-0.15,-0.1,-0.05,0,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1};
 
 const int ngen_d0j0k1 =20;
 double genrang_d0j0k1[ngen_d0j0k1+1]={-1,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1};
+*/
+const int nreco_d0j0k1 =30;
+double recorang_d0j0k1[nreco_d0j0k1+1]={-1,-0.95,-0.9,-0.85,-0.8,-0.75,-0.7,-0.65,-0.6,-0.55,-0.5,-0.4,-0.3,-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1};
+
+const int ngen_d0j0k1 =16;
+double genrang_d0j0k1[ngen_d0j0k1+1]={-1,-0.9,-0.8,-0.7,-0.6,-0.5,-0.3,-0.1, 0, 0.1,0.3,0.5,0.6,0.7,0.8,0.9,1};
 
 //----------------------------------------PT Binning For 2D unfold 
 double recohtbins[nHLTmx+1] = {92, 119, 185, 251, 319, 388, 467, 518, 579, 669, 3000.0};
 
-double recohtbins2D[PTbins+1] = {100, 300, 500, 3000.0};
+//double recohtbins2D[PTbins+1] = {100, 300, 500, 3000.0};
 
 /*
 #ifdef MERGE_BIN
@@ -620,6 +626,7 @@ class QCDEventShape : public edm::EDAnalyzer {
   TH1* h_recofake2D[njetetamn][ndef][njet][nkappa];
   TH1* h_genmiss2D[njetetamn][ndef][njet][nkappa];
   TH2* h_RM2D[njetetamn][ndef][njet][nkappa];
+  TH2* h_RM2D_Test[njetetamn][ndef][njet][nkappa];
 
   TH1* h_reco2D_d0j0k1[njetetamn];
   TH1* h_reco2D_d0j0k6[njetetamn];
@@ -812,6 +819,18 @@ class QCDEventShape : public edm::EDAnalyzer {
   edm::EDGetTokenT< double > prefweightup_token;
   edm::EDGetTokenT< double > prefweightdown_token;
 
+  edm::EDGetTokenT<reco::TrackCollection> tracksToken_;
+
+  edm::EDGetTokenT<bool> filterGoodVerticesToken_;
+  edm::EDGetTokenT<bool> filterglobalSuperTightHalo2016FilterToken_;
+  edm::EDGetTokenT<bool> filterHBHENoiseFilterToken_;
+  edm::EDGetTokenT<bool> filterHBHENoiseIsoFilterToken_;
+  edm::EDGetTokenT<bool> filterEcalDeadCellTriggerPrimitiveFilterToken_;
+  edm::EDGetTokenT<bool> filterBadPFMuonFilterToken_;
+  edm::EDGetTokenT<bool> filterBadPFMuonDzFilterToken_;
+  edm::EDGetTokenT<bool> filtereeBadScFilterToken_;
+  edm::EDGetTokenT<bool> filterecalBadCalibFilterToken_;
+
   float qscale;
   float wtfact; //MC : eventinfo->weight(); data : hltpres[ihltfill]*l1pres[ihltfill];
   int procid, npilup1, npilup2; //1:-5 to -1, 2:0 to 3
@@ -864,6 +883,16 @@ edm::LumiReWeighting *LumiWeights_;
   prefweight_token(consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProb"))),
   prefweightup_token(consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProbUp"))),
   prefweightdown_token(consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProbDown"))),
+  tracksToken_(consumes<reco::TrackCollection>(iConfig.getParameter<edm::InputTag>("tracks"))),
+  filterGoodVerticesToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterGoodVertices"))),
+  filterglobalSuperTightHalo2016FilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterglobalSuperTightHalo2016Filter"))),
+  filterHBHENoiseFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterHBHENoiseFilter"))),
+  filterHBHENoiseIsoFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterHBHENoiseIsoFilter"))),
+  filterEcalDeadCellTriggerPrimitiveFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterEcalDeadCellTriggerPrimitiveFilter"))),
+  filterBadPFMuonFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterBadPFMuonFilter"))),
+  filterBadPFMuonDzFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterBadPFMuonDzFilter"))),
+  filtereeBadScFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filtereeBadScFilter"))),
+  filterecalBadCalibFilterToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("filterecalBadCalibFilter"))),
   hltPrescaleProvider_(iConfig, consumesCollector(), *this)
 {
   //now do what ever initialization is needed
@@ -889,12 +918,13 @@ edm::LumiReWeighting *LumiWeights_;
   theRootFileName = iConfig.getUntrackedParameter<string>("RootFileName");
  
   //cout << "Testing 1 ==== " <<njecmx<< endl;
-                                                                                                                                                                        
-//Define TUnfoldBinning
+
   char RecoBinName[100], GenBinName[100], Axisname[100]; 
   char name[200];
   char title[200];
+
 //-------------------------------------------Define TUnfoldBinning Jet Charge
+//Binning scheme for both RECO & GEN and for all 3 definition, 2 jets and 10 kappas using array
 for (int iet=0; iet<njetetamn; iet++) {
 	for(int id=0; id<ndef; id++){
 		for(int ij=0; ij<njet; ij++){
@@ -906,8 +936,8 @@ for (int iet=0; iet<njetetamn; iet++) {
                 		sprintf(Axisname, "d%i_j%i_k%i", id,ij,ik);
                 		RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], false, false);
                 		sprintf(Axisname, "pt");
-                		//RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
-				RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
+                		RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
+				//RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
 
 				sprintf(GenBinName, "Generator2d_eta%i_d%i_j%i_k%i", iet, id,ij,ik);
 		                binsGen2D[iet][id][ij][ik] = new TUnfoldBinning(GenBinName);
@@ -916,13 +946,14 @@ for (int iet=0; iet<njetetamn; iet++) {
                			sprintf(Axisname, "d%i_j%i_k%i", id, ij, ik);
                 		GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik], false, false);
                 		sprintf(Axisname, "pt");
-                		//GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
-				GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
+                		GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
+				//GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
 				}
 			}
 		}
 	}
-
+///Binning scheme for both RECO & GEN and for all 1 definition (default JCO), 1 jet and 3 kappas
+//For Cross-check with the array scheme equidistant binning
 for (int iet=0; iet<njetetamn; iet++) {
 	sprintf(RecoBinName, "Detector2d_d0j0k1_eta%i", iet);
         binsRec2D_d0j0k1[iet] = new TUnfoldBinning(RecoBinName);
@@ -947,10 +978,11 @@ for (int iet=0; iet<njetetamn; iet++) {
         sprintf(RecoBinName, "Recobin2d_d0j0k3_eta%i",iet);
         RecoBinning2D_d0j0k3[iet] = binsRec2D_d0j0k3[iet]->AddBinning(RecoBinName);
         sprintf(Axisname, "d0_j0_k3");
-        RecoBinning2D_d0j0k3[iet]->AddAxis(Axisname, 60, -3.0, 3.0, false, false);
+        RecoBinning2D_d0j0k3[iet]->AddAxis(Axisname, 40, -2.0, 2.0, false, false);
         sprintf(Axisname, "pt");
         RecoBinning2D_d0j0k3[iet]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
 		
+
 	sprintf(GenBinName, "Generator2d_d0j0k1_eta%i", iet);
         binsGen2D_d0j0k1[iet] = new TUnfoldBinning(GenBinName);
         sprintf(GenBinName, "Genbin2d_d0j0k1_eta%i",iet);
@@ -974,11 +1006,11 @@ for (int iet=0; iet<njetetamn; iet++) {
         sprintf(GenBinName, "Genbin2d_d0j0k3_eta%i",iet);
         GenBinning2D_d0j0k3[iet] = binsGen2D_d0j0k3[iet]->AddBinning(GenBinName);
         sprintf(Axisname, "d0_j0_k3");
-        GenBinning2D_d0j0k3[iet]->AddAxis(Axisname, 30, -3.0, 3.0, false, false);
+        GenBinning2D_d0j0k3[iet]->AddAxis(Axisname, 20, -2.0, 2.0, false, false);
         sprintf(Axisname, "pt");
         GenBinning2D_d0j0k3[iet]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
 
-        
+//Using Bin edge        
         sprintf(RecoBinName, "Detector2d_R_d0j0k1_eta%i", iet);
         binsRec2D_R_d0j0k1[iet] = new TUnfoldBinning(RecoBinName);
         sprintf(RecoBinName, "Recobin2d_R_d0j0k1_eta%i",iet);
@@ -998,6 +1030,7 @@ for (int iet=0; iet<njetetamn; iet++) {
         GenBinning2D_R_d0j0k1[iet]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
 }
 
+//Histograms for 2D binning scheme
 for (int iet=0; iet<njetetamn; iet++) {
         for(int id=0; id<ndef; id++){
                 for(int ij=0; ij<njet; ij++){
@@ -1029,22 +1062,24 @@ for (int iet=0; iet<njetetamn; iet++) {
 		                                sprintf(title, "Gen_Reco %g Q_{%s,%g}^{%g}", etarange[iet], jcodef[id], jetname[ij],kappa[ik]);
                 		                h_RM2D[iet][id][ij][ik] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D[iet][id][ij][ik], binsGen2D[iet][id][ij][ik], name ,0,0, title);
                                 		h_RM2D[iet][id][ij][ik]->Sumw2();
+
+						//For Reco-Gen JCO <0.3 - cross-check test for horizontal line RM 
+						sprintf(name, "dd_corr_D03_eta%i_d%i_j%i_k%i", iet, id,ij,ik);
+                                                sprintf(title, "Gen_Reco 0.3 %g Q_{%s,%g}^{%g}", etarange[iet], jcodef[id], jetname[ij],kappa[ik]);
+                                                h_RM2D_Test[iet][id][ij][ik] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D[iet][id][ij][ik], binsGen2D[iet][id][ij][ik], name ,0,0, title);
+                                                h_RM2D_Test[iet][id][ij][ik]->Sumw2();
 					}
 				}
 			}
 		}
 	}
+//2D Histogram for 1 definition (default JCO), 1 jet and 3 kappas - cross-check against array
 for (int iet=0; iet<njetetamn; iet++) {
 	if (isReconstruct) {
 		sprintf(name, "dd_reco_d0_j0_k1_eta%i", iet);
                 sprintf(title, "2D Reco %g Q_{D,1}^{k=1}", etarange[iet]);
                 h_reco2D_d0j0k1[iet] = binsRec2D_d0j0k1[iet]->CreateHistogram(name,false,0,title);
                 h_reco2D_d0j0k1[iet]->Sumw2();
-
-                sprintf(name, "dd_reco_R_d0_j0_k1_eta%i", iet);
-                sprintf(title, "2D Reco R %g Q_{D,1}^{k=1}", etarange[iet]);
-                h_reco2D_R_d0j0k1[iet] = binsRec2D_R_d0j0k1[iet]->CreateHistogram(name,false,0,title);
-                h_reco2D_R_d0j0k1[iet]->Sumw2();
 
 		sprintf(name, "dd_reco_d0_j0_k6_eta%i", iet);
                 sprintf(title, "2D Reco %g Q_{D,1}^{k=0.6}", etarange[iet]);
@@ -1055,6 +1090,12 @@ for (int iet=0; iet<njetetamn; iet++) {
                 sprintf(title, "2D Reco %g Q_{D,1}^{k=0.3}", etarange[iet]);
                 h_reco2D_d0j0k3[iet] = binsRec2D_d0j0k3[iet]->CreateHistogram(name,false,0,title);
                 h_reco2D_d0j0k3[iet]->Sumw2();
+
+		//bin edge
+		sprintf(name, "dd_reco_R_d0_j0_k1_eta%i", iet);
+                sprintf(title, "2D Reco R %g Q_{D,1}^{k=1}", etarange[iet]);
+                h_reco2D_R_d0j0k1[iet] = binsRec2D_R_d0j0k1[iet]->CreateHistogram(name,false,0,title);
+                h_reco2D_R_d0j0k1[iet]->Sumw2();
 		}	
 	
 		sprintf(name, "dd_gen_d0_j0_k1_eta%i", iet);
@@ -1072,6 +1113,7 @@ for (int iet=0; iet<njetetamn; iet++) {
                 h_gen2D_d0j0k3[iet] = binsGen2D_d0j0k3[iet]->CreateHistogram(name,false,0,title);
                 h_gen2D_d0j0k3[iet]->Sumw2();
 
+		//bin edge
 		sprintf(name, "dd_gen_R_d0_j0_k1_eta%i", iet);
                 sprintf(title, "2D Gen R %g Q_{D,1}^{k=1}", etarange[iet]);
                 h_gen2D_R_d0j0k1[iet] = binsGen2D_R_d0j0k1[iet]->CreateHistogram(name,false,0,title);
@@ -1093,6 +1135,7 @@ for (int iet=0; iet<njetetamn; iet++) {
                 h_RM2D_d0j0k3[iet] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D_d0j0k3[iet], binsGen2D_d0j0k3[iet], name ,0,0, title);
                 h_RM2D_d0j0k3[iet]->Sumw2();           
 
+		//bin edge
 		sprintf(name, "dd_corr_R_d0_j0_k1_eta%i", iet);
                 sprintf(title, "Gen_Reco R %g Q_{D,1}^{k=1}", etarange[iet]);
                 h_RM2D_R_d0j0k1[iet] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D_R_d0j0k1[iet], binsGen2D_R_d0j0k1[iet], name ,0,0, title);
@@ -1101,6 +1144,7 @@ for (int iet=0; iet<njetetamn; iet++) {
 }
 
 //-------------------------------------------Jet Charge Histogram
+//1D Histogram for RECO & GEN for 3 definition, 2 jets, 10 kappa using array
 for(int ipt=0; ipt<njetptmn; ipt++){
         for(int iet=0; iet<njetetamn; iet++){
 		for(int id=0; id<ndef; id++){
@@ -1122,16 +1166,19 @@ for(int ipt=0; ipt<njetptmn; ipt++){
                                 	h_RM[ipt][iet][id][ij][ik] = fs->make<TH2F>(name, title, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik]);
                                 	h_RM[ipt][iet][id][ij][ik]->Sumw2();
 
+					//RM without weight
 					sprintf(name, "RM_jc_wow_pt%i_eta%i_d%i_j%i_k%i",ipt,iet, id, ij, ik);
                                         sprintf(title, "RM w/o weight %i %g Q_{%s,%g}^{%g}",int(leadingPtThreshold[ipt]), etarange[iet] , jcodef[id], jetname[ij], kappa[ik]);
                                         h_RM_WOW[ipt][iet][id][ij][ik] = fs->make<TH2F>(name, title, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik]);
                                         h_RM_WOW[ipt][iet][id][ij][ik]->Sumw2();
 
+					//RM with 2D condition 
 					sprintf(name, "RM_jc_2DC_pt%i_eta%i_d%i_j%i_k%i",ipt,iet, id, ij, ik);
                                         sprintf(title, "RM 2DC %i %g Q_{%s,%g}^{%g}",int(leadingPtThreshold[ipt]), etarange[iet] , jcodef[id], jetname[ij], kappa[ik]);
                                         h_RM_2DC[ipt][iet][id][ij][ik] = fs->make<TH2F>(name, title, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik]);
                                         h_RM_2DC[ipt][iet][id][ij][ik]->Sumw2();
 
+					//RM with 2D condition without weight
 					sprintf(name, "RM_jc_2DC_wow_pt%i_eta%i_d%i_j%i_k%i",ipt,iet, id, ij, ik);
                                         sprintf(title, "RM 2DC w/o weight %i %g Q_{%s,%g}^{%g}",int(leadingPtThreshold[ipt]), etarange[iet] , jcodef[id], jetname[ij], kappa[ik]);
                                         h_RM_2DC_WOW[ipt][iet][id][ij][ik] = fs->make<TH2F>(name, title, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik]);
@@ -1155,15 +1202,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
 		}
 	}
 
-//for(int ipt=0; ipt<njetptmn; ipt++){
-        for(int iet=0; iet<njetetamn; iet++){
-		sprintf(name, "RMtest_jc_eta%i",iet);
-                sprintf(title, "RMtest %g",etarange[iet]);
-                //RM_test[iet] = fs->make<TH2F>(name, title, 40, -1, 1, 40, -1,1);
-		RM_test[iet] = fs->make<TH2F>(name, title, 200, 0, 2000, 200, 0, 2000);
-                RM_test[iet]->Sumw2();
-	}
-//}
+//1D Histogram for 1 definition, 1 Jet, 3 kappas -cross-check against array case
 for(int ipt=0; ipt<njetptmn; ipt++){
         for(int iet=0; iet<njetetamn; iet++){
 		if (isReconstruct) {
@@ -1216,11 +1255,21 @@ for(int ipt=0; ipt<njetptmn; ipt++){
 			}
 		}
 	}
+
+//RM for Jet PT RECO vs GEN
+for(int iet=0; iet<njetetamn; iet++){
+	sprintf(name, "RM_leadpt_eta%i",iet);
+        sprintf(title, "RM Reco Vs. Gen Lead-Pt %g",etarange[iet]);
+	RM_test[iet] = fs->make<TH2F>(name, title, 200, 0, 2000, 100, 0, 2000);
+       	RM_test[iet]->Sumw2();
+}
+
 //-------------------------------------------
  sprintf(name, "corr_jet");
  sprintf(title, "Gen_Reco_HT2");
  h_2ht=fs->make<TH2F>(name, title, 10, leadingPtThreshold, 10, leadingPtThreshold);
 //-------------------------------------------
+
 #ifndef GENPART                     
   //recojt_hist = fs->make<TH1F>("recojt_hist","# of recojets",20,-0.5, 19.5);
   //recojt_hist->Sumw2();
@@ -1379,10 +1428,12 @@ for(int ipt=0; ipt<njetptmn; ipt++){
 
 #endif
 //-------------------------------------------
+
   for (int ij=0; ij<nhist; ij++) {
     sprintf(name, "anglex_%i", ij);
     vec_anglex[ij] = fs->make<TH1F>(name, name, 240, 0.7, 1.0);
   }
+
   //genjt_hist = fs->make<TH1F>("genjt_hist","# of genjets",20,-0.5, 19.5);
   //genjt_hist->Sumw2();
   for(int jk=0; jk<njetetamn; jk++){
@@ -1417,6 +1468,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
     genjt_oth_pt[jk] = fs->make<TH1F>(name,title,100, 20., 2020.);
     genjt_oth_pt[jk]->Sumw2();
    */
+
     sprintf(name, "genjetdpt_%i",jk);
     sprintf(title, "dpt_{genjets12}_%g", etarange[jk]);
 
@@ -1531,6 +1583,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
   genneu_oth_phi = fs->make<TH1F>("genneu_oth_phi","#phi_{genneutrals_oth}",100,-M_PI, M_PI);
   genneu_oth_phi->Sumw2();
   */
+
   for (int ij=0; ij<nHLTmx; ij++) { 
     sprintf(name, "nprimall_%i", ij);
     sprintf(title, "# of primary vtx (%s)", (ij==0) ? "ALL" : jethlt_name[ij-1]);
@@ -1648,6 +1701,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
   } 
 #endif
 //Trigger special
+
 //-------------------------------------------
 	if (isReconstruct) { 
 		for(int ij=0; ij<nHLTmx; ij++){
@@ -1664,6 +1718,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
 			}
 		}
 	}
+
 #ifdef TRIGGER
   for(int ij=0; ij<nHLTmx; ij++){
 
@@ -1697,6 +1752,7 @@ for(int ipt=0; ipt<njetptmn; ipt++){
     }
   }
 #endif
+
   counthist = fs->make<TH1F>("count","No of events",2,0,2); 
 
   for (int ix=0; ix<32; ix++) { mypow_2[ix] = pow(2,ix);}
@@ -1750,7 +1806,8 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 //-------------------------------------------
   
   std::vector<HepLorentzVector> recomom[njecmx][ntype][njetetamn];
-  std::vector<HepLorentzVector> tmpjt4v;                                                     std::vector<HepLorentzVector> genmom[nGenReso][ntype][njetetamn];
+  std::vector<HepLorentzVector> genmom[nGenReso][ntype][njetetamn];
+  std::vector<HepLorentzVector> tmpjt4v;                                                  
   std::vector<HepLorentzVector> tmpgen4v;
   
   recojet1_pt = 0.0, recojet2_pt = 0.0;
@@ -1796,6 +1853,59 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	//#endif
 	double leadgenptres[nGenReso]={0};// jet charge
 
+
+Handle<bool> filterGoodVertices;
+iEvent.getByToken(filterGoodVerticesToken_, filterGoodVertices);
+
+//bool passMETFilters = (*filterGoodVertices);
+//if(!passMETFilters) return;
+
+edm::Handle<reco::VertexCollection> primaryVertices;
+iEvent.getByToken(vtxToken_, primaryVertices);
+
+//Select events with at least one good primary vertex with ndof>4 with abs(z)<24 and rho<2
+bool PVEvent=false;
+if (primaryVertices.isValid() && primaryVertices->size()>0) {
+        for (reco::VertexCollection::const_iterator vert=primaryVertices->begin(); vert<primaryVertices->end(); vert++) {
+                if(!vert->isFake() && vert->ndof()>4 && abs(vert->position().z())<24 && vert->position().rho() < 2){
+                        PVEvent=true;
+                        break;
+                        }
+                }
+        }
+if(!PVEvent) return;
+
+edm::Handle<pat::METCollection> pfmet;
+iEvent.getByToken(metToken_, pfmet);
+
+//MET should be within 0.3
+double miset=0, /*misphi=0,*/ sumEt=0;
+	if(pfmet.isValid()){
+		miset = pfmet->begin()->corPt();
+	  	//misphi = pfmet->begin()->corPhi(); 
+	  	sumEt = pfmet->begin()->corSumEt() ; 
+		if(sumEt<1.) { sumEt = 1.; } 
+		//cout<<(miset*1.0/sumEt)<<endl;
+	  }	
+if((miset*1.0/sumEt)>0.3) return ;
+
+/*
+edm::Handle<reco::TrackCollection> tracks;
+iEvent.getByToken(tracksToken_, tracks);
+
+bool isGoodTrack = false;
+if(tracks.isValid() && tracks->size()>1){
+for(unsigned trk =0; trk !=tracks->size(); trk++){
+	//cout<<" Track PT : "<<(*tracks)[trk].pt()<<" hitpattern : "<<(*tracks)[trk].hitPattern().numberOfValidHits()<<" chi2 : "<<(*tracks)[trk].normalizedChi2()<<endl;
+	if((*tracks)[trk].pt()>1.0 && (*tracks)[trk].hitPattern().numberOfValidHits() >= 10 && (*tracks)[trk].normalizedChi2() < 5.0){
+	isGoodTrack = true;
+		}
+	}
+}
+if (!isGoodTrack) return;
+//cout<<"Checking Complete..."<<endl;
+*/
+
 #ifdef TRIGGER
   const char* variab1;
 #endif
@@ -1817,6 +1927,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 				}
     			}
 #endif
+
     edm::Handle<GenEventInfoProduct> eventinfo;
     iEvent.getByToken(generator1_, eventinfo);
     if (eventinfo.isValid()) { 
@@ -1876,11 +1987,11 @@ double _prefiringweightdown =(*theprefweightdown);
   //int ihltfill = -1;
 #endif
   
-  tmpjt4v.clear();
+  tmpjt4v.clear();   //Reco level
   //tmpcand4v.clear();
-  tmpgen4v.clear();
+  tmpgen4v.clear();  // Gen level
 
-  double aveleadingpt =0;  //ESVs (dijet)
+  //double aveleadingpt =0;  //ESVs (dijet)
   double leadingpt = 0;    //Jet charge (single jet)
   bool isInEtaRange[njetetamn]={0}; //GMA{0,0,0,0};
  /* 
@@ -1904,7 +2015,7 @@ double _prefiringweightdown =(*theprefweightdown);
       isInEtaRange[iet] = true;
       }
     
-    for (int ij=0; ij<2; ij++) { 
+    for (int ij=0; ij<1; ij++) { 
       for (int iet=0; iet<njetetamn; iet++) {
 	if (abs((*ak4PFJets)[ij].eta())>etarange[iet]) { isInEtaRange[iet] = false;}
       }
@@ -1941,10 +2052,12 @@ double _prefiringweightdown =(*theprefweightdown);
 
 	if(!TightJetID && !passPUIDtight) continue;
 	if (abs((*ak4PFJets)[ij].eta())>2.1 && (*ak4PFJets)[ij].pt()<30.0 ) continue;
-	aveleadingpt +=(*ak4PFJets)[ij].pt();
-	leadingpt = (*ak4PFJets)[0].pt();
+	//aveleadingpt +=(*ak4PFJets)[ij].pt();
+	leadingpt = (*ak4PFJets)[ij].pt();
+	//std::cout << "Leading jet pt :"<<leadingpt<<endl;
+        //std::cout << "Sub-Leading jet pt :"<<(*ak4PFJets)[1].pt()<<endl;
     }
-    aveleadingpt /=2.0;
+    //aveleadingpt /=2.0;
     
 #else
 
@@ -2133,6 +2246,7 @@ weighttrg = tmpwt*lumiwtt;
 */
 
 //-------------------------------------------
+
 #ifndef GENPART
   if(!isMC){
     reco::TrackBase::Point beamPoint(0,0, 0);
@@ -2143,15 +2257,15 @@ weighttrg = tmpwt*lumiwtt;
     if (beamSpotH.isValid()){
       beamPoint = beamSpotH->position();
     }
-    
-    edm::Handle<reco::VertexCollection> primaryVertices;
-    iEvent.getByToken(vtxToken_, primaryVertices);
-    
+    //cout<<"Debugging 1 "<<endl;
+    //edm::Handle<reco::VertexCollection> primaryVertices;
+    //iEvent.getByToken(vtxToken_, primaryVertices);  
     int tmpvert=0;
     nprim=0;
     if (primaryVertices.isValid()) {
       tmpvert = primaryVertices->size();
       //cout<<"temp"<<tmpvert<<endl;
+	//cout<<"Debugging 2 "<<endl;
       for (reco::VertexCollection::const_iterator vert=primaryVertices->begin(); vert<primaryVertices->end(); vert++) {
 	int isel = (vert->isValid() && !vert->isFake()) ? 1 : 0;
 	int ngoodtrk = 0;
@@ -2196,14 +2310,17 @@ weighttrg = tmpwt*lumiwtt;
       prim_sel_rewt[irecoht]->Fill(nprim, weighttrg);   
     }
     prim_correl->Fill(tmpvert, nprim);
-  } 
+ } 
 #endif 
   
 if(isMC) {
 
 //    edm::Handle<reco::GenJetCollection> genjets;
 //    iEvent.getByToken(genjetToken_,genjets);
-} 
+}
+
+//Reco Level work starts here 
+ 
   vector<double> jetptx[njecmx];
   vector<double> jetscl[njecmx];
   vector<int> jetindx[njecmx];
@@ -2301,6 +2418,8 @@ if(isMC) {
       if (jetptx[isrc].size()>=2) {
 	leadingptjec[isrc] = jetptx[isrc][0];
         irecohtjec[isrc] = getbinid(leadingptjec[isrc], nHLTmx, leadingPtThreshold);
+	//irecohtjec[isrc] = getbinid(leadingptjec[isrc], PTbins, recohtbins2D);
+	//cout<<irecohtjec[isrc]<<endl;
       } else {
 	irecohtjec[isrc] = -1;
       }
@@ -2378,8 +2497,10 @@ if(isMC) {
                 if (abs((*ak4PFJets)[ireorjt].eta())>2.7) {TightJetID = false;}
                 if ((*ak4PFJets)[ireorjt].pt()<30.0) {TightJetID = false;}
 		
-		if( ireorjt<=1 && !TightJetID) break;
+		//if( ireorjt<=1 && !TightJetID) break;
+		if( ireorjt<=1 && !TightJetID) continue;
 		if (!TightJetID && !passPUIDtight) continue;
+		//cout<<"ireorjt : "<<ireorjt<<endl;
 			
 		HepLorentzVector tmp4v((*ak4PFJets)[ireorjt].px(), (*ak4PFJets)[ireorjt].py(), (*ak4PFJets)[ireorjt].pz(), (*ak4PFJets)[ireorjt].energy()); tmp4v *=sup;
                 Hep3Vector tmp3v((*ak4PFJets)[ireorjt].px(), (*ak4PFJets)[ireorjt].py(), (*ak4PFJets)[ireorjt].pz()); tmp3v *=sup;
@@ -2398,7 +2519,8 @@ if(isMC) {
 		    if ((isInEtaRange[iet])) {recojt_pt[iet]->Fill(tmp4v.perp(), weighttrg);}
 		    if (isPt && iet==0) {recojt_eta->Fill(tmp4v.eta(), weighttrg);}
 		    if (isEta && isPt) {recojt_phi->Fill(tmp4v.phi(), weighttrg);}
-		    if (isEta && ncount==1) {recoht2_pt[iet]->Fill(aveleadingpt,weighttrg);}
+		    //if (isEta && ncount==1) {recoht2_pt[iet]->Fill(aveleadingpt,weighttrg);}
+		    if (isEta && ncount==1) {recoht2_pt[iet]->Fill(0.5*(tmpjt4v[0].perp()+tmpjt4v[1].perp()),weighttrg);}
 		  }//if (isrc==0) {
 		
 		if (isrc==0) { 
@@ -2414,12 +2536,16 @@ if(isMC) {
 
 		    if (isInEtaRange[iet] && ncount==2) { 
 		      if (irecoht>=0 && irecoht<nHLTmx) { 
-			recojtave_pt[iet][irecoht]->Fill(aveleadingpt, weighttrg);
-			recojtavewt1_pt[iet][irecoht]->Fill(aveleadingpt);
+			//recojtave_pt[iet][irecoht]->Fill(aveleadingpt, weighttrg);
+			//recojtavewt1_pt[iet][irecoht]->Fill(aveleadingpt);
+			recojtave_pt[iet][irecoht]->Fill(0.5*(tmpjt4v[0].perp()+tmpjt4v[1].perp()), weighttrg);
+                        recojtavewt1_pt[iet][irecoht]->Fill(0.5*(tmpjt4v[0].perp()+tmpjt4v[1].perp()));
 		      }
 		      
-		      recojtallavewt1_pt[iet]->Fill(aveleadingpt);
-		      recojtallave_pt[iet]->Fill(aveleadingpt, weighttrg);
+		      //recojtallavewt1_pt[iet]->Fill(aveleadingpt);
+		      //recojtallave_pt[iet]->Fill(aveleadingpt, weighttrg);
+		      recojtallavewt1_pt[iet]->Fill(0.5*(tmpjt4v[0].perp()+tmpjt4v[1].perp()));
+                      recojtallave_pt[iet]->Fill(0.5*(tmpjt4v[0].perp()+tmpjt4v[1].perp()), weighttrg);
 		    }
 		    
 		  } else if(ijet==2) {
@@ -2511,10 +2637,10 @@ if(isMC) {
                 const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
                 int charge = pfcand.charge();
 		Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
-		if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+		if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
 		if(isrc==0){
 			recojet1_pt = tmp3v.perp();
-			
+			//cout<<" hasTrackDetails "<<pfcand.hasTrackDetails()<<" trackHighPurity "<<pfcand.trackHighPurity()<<"numberOfHits" << (pfcand.numberOfHits())<<" fromPV "<<pfcand.fromPV()<<" dz "<<pfcand.dz()<<endl;
 			ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik])); 
 
 			ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
@@ -2523,7 +2649,7 @@ if(isMC) {
 			
 			ijet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
 			ijet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
-
+			
 			//cout<<"Reco Particle Check 1 : "<<" pt : "<<cand3v.perp()<<" eta : "<<cand3v.eta()<<" charge : "<<charge<<endl;
 			//cout<<"Reco Particle Check 2 : "<<" pt : "<<pfcand.pt()<<" eta : "<<pfcand.eta()<<" id : "<<pfcand.pdgId()<<" charge : "<<pfcand.charge()<<endl;
 					}
@@ -2538,7 +2664,7 @@ if(isMC) {
 		const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
                 int charge = pfcand.charge();
 		Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
-		if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+		if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
                 if(isrc==0){
 			recojet2_pt = tmp3v.perp();
                         
@@ -2603,14 +2729,19 @@ if(isMC) {
   //cout << "Write test 1 = ok " << endl;
   //==================================***GenJets*****=================================
   //cout<<"0 aveleadingpt "<<aveleadingpt<< " ; "<<ihltfill<<" "<<irecoht<<endl;
+  //double leadgenpt =0;
+
+//Gen level work starts
   edm::Handle<reco::GenJetCollection> genjets;
   if(isMC) {
     //edm::Handle<reco::GenJetCollection> genjets;
     iEvent.getByToken(genjetToken_,genjets);
     
-    double avegenpt =0;
+    //double avegenpt =0;
     double leadgenpt =0;
     //cout <<"HGebjet "<<endl;
+    if(isMC && ((!genjets.isValid()) || genjets->size()<2)) return;
+
     if (genjets.isValid() &&  genjets->size()>=2) {
 #ifdef DIJETAVE
 	
@@ -2618,25 +2749,27 @@ if(isMC) {
 	isInEtaRange[iet] = true;
       }
       
-      for (int ij=0; ij<2; ij++) {
+      for (int ij=0; ij<1; ij++) {
 	for (int iet=0; iet<njetetamn; iet++) {
 	  if (abs((*genjets)[ij].eta())>etarange[iet]) { isInEtaRange[iet] = false;}
 	}
 	
 	//if (abs((*genjets)[ij].eta())<2.5 && (*genjets)[ij].pt()>30.0 ) {
-	
+/*	
 	if (abs((*genjets)[ij].eta())<2.1 && (*genjets)[ij].pt()>30.0 ) { 
 	  avegenpt +=(*genjets)[ij].pt();
           leadgenpt = (*genjets)[0].pt();
 	} else {avegenpt -=100000;
 		leadgenpt -=100000;}
-	/*
+*/
+	
 	if (abs((*genjets)[ij].eta())>2.1 && (*genjets)[ij].pt()<30.0 ) continue;
-	  avegenpt +=(*genjets)[ij].pt();
-          leadgenpt = (*genjets)[0].pt();
-	*/
+	  //avegenpt +=(*genjets)[ij].pt();
+          leadgenpt = (*genjets)[ij].pt();
+	//cout<<"Lead gen pt : "<<leadgenpt<<endl;
+	//cout<<"Sub-Lead gen pt : "<<(*genjets)[1].pt()<<endl;
       }
-        avegenpt /=2.0;
+        //avegenpt /=2.0;
 #else 
 
 #endif
@@ -2649,7 +2782,8 @@ if(isMC) {
     vector<double> genjetptx[nGenReso];
     vector<double> genjetscl[nGenReso]; 
     vector<int> genjetindx[nGenReso];
-    
+   
+  if(genjets.isValid()){
     for(unsigned ijet = 0; ijet != genjets->size(); ijet++) {
       double pt = (*genjets)[ijet].pt();
       for (int isrc = 0; isrc < nGenReso; isrc++) {
@@ -2659,12 +2793,12 @@ if(isMC) {
 	genjetindx[isrc].push_back(ijet);
       }
     }
-    
+  }
        //cout << "Write test 3 = ok " << endl;
        //cout << "Write test 322 = ok "<<nGenReso << endl;
 //////#ifdef JETRESO
     for (int isrc = 0; isrc < nGenReso; isrc++) {
-      if(genjetptx[isrc].size()==0) break;
+     //if(genjetptx[isrc].size()==0) break;
       for (unsigned int ij=0; ij<genjetptx[isrc].size()-1; ij++) {
 	for (unsigned int jk=ij+1; jk<genjetptx[isrc].size(); jk++) {  
 	  if (genjetptx[isrc][jk]>genjetptx[isrc][ij]){ 
@@ -2674,8 +2808,8 @@ if(isMC) {
 	    
 	    genjetptx[isrc][ij] = genjetptx[isrc][jk];
 	    genjetscl[isrc][ij] = genjetscl[isrc][jk];
-	    genjetindx[isrc][ij] = genjetindx[isrc][jk];					
-	    
+	    genjetindx[isrc][ij] = genjetindx[isrc][jk];			
+
 	    genjetptx[isrc][jk] = tmppt;
 	    genjetscl[isrc][jk] = tmpscl;
 	    genjetindx[isrc][jk] = tmpindx;
@@ -2691,6 +2825,7 @@ if(isMC) {
       if (genjetptx[isrc].size()>=2) {
         leadgenptres[isrc] = (genjetptx[isrc][0]);
         igenhtres[isrc] = getbinid(leadgenptres[isrc], njetptmn, leadingPtThreshold);
+	//igenhtres[isrc] = getbinid(leadgenptres[isrc], PTbins, recohtbins2D);
       } else {
 	igenhtres[isrc] = -1;
       }
@@ -2709,7 +2844,7 @@ if(isMC) {
 	    //int recterm=0;
 	    //int ithird=-1;
 	    tmpgen4v.clear(); 
-	    for(unsigned ijet = 0; ijet < genjets->size(); ijet++) {
+	    for(unsigned ijet = 0; ijet != genjets->size(); ijet++) {
 		if (abs((*genjets)[genjetindx[isrc][0]].eta())<etarange[iet] && abs((*genjets)[genjetindx[isrc][1]].eta())<etarange[iet]) {
 	     /* if ((*genjets)[igenjt].pt()>25.0) {
 		cout<<"ievt "<<ievt<<" "<<ijet<<" "<<igenjt<<" "<<genjetptx[isrc][ijet]<<" "<<(*genjets)[igenjt].pt()<<" "<<(*genjets)[igenjt].eta()<<" "<<(*genjets)[igenjt].phi()<<endl;
@@ -2722,7 +2857,7 @@ if(isMC) {
                 if (dPT(((*genjets)[genjetindx[isrc][0]].pt()), ((*genjets)[genjetindx[isrc][1]].pt()))>0.3) continue; 
 		//if ((((*genjets)[genjetindx[isrc][0]].pt()) / ((*genjets)[genjetindx[isrc][1]].pt()))>1.5) continue;
 		int igenjt = genjetindx[isrc][ijet];
-	
+		//cout<<genjetindx[isrc][ijet]<<endl;
 		double pt = genjetptx[isrc][ijet];
 		double sup = genjetscl[isrc][ijet];
 		double abseta = abs((*genjets)[igenjt].eta());
@@ -2735,9 +2870,12 @@ if(isMC) {
 		bool isPt = (pt>30.0) ? true : false;
 		if (isEta && isPt) {ncount++;}	
 		
+		//if(igenjt<=1) continue;
+		//cout<<"igenjt : "<<igenjt<<endl;
+	
 		HepLorentzVector tmp4v((*genjets)[igenjt].px(), (*genjets)[igenjt].py(), (*genjets)[igenjt].pz(), (*genjets)[igenjt].energy()); tmp4v *=sup;
 		Hep3Vector tmp3v((*genjets)[igenjt].px(), (*genjets)[igenjt].py(), (*genjets)[igenjt].pz()); tmp3v *=sup;
-	
+			
 		if (isEta && isPt) { tmpgen4v.push_back(tmp4v);} 
 	
 		  if (isEta && isPt) {genmom[isrc][0][iet].push_back(tmp4v);}
@@ -2745,7 +2883,8 @@ if(isMC) {
 		  if (isrc==0) { 
 		    if (isInEtaRange[iet]) {genjt_pt[iet]->Fill(tmp4v.perp(), weighttrg);}
 		    if (isPt && iet==0) {genjt_eta->Fill(tmp4v.eta(), weighttrg);}
-		    if (isEta && isPt) {genjt_phi->Fill(tmp4v.phi(), weighttrg);}  
+		    if (isEta && isPt) {genjt_phi->Fill(tmp4v.phi(), weighttrg);}
+			//cout<<"GenJet PT : "<<tmp4v.perp()<<endl;  
 		  }
 		
 		if (isrc==0) { 
@@ -2754,7 +2893,7 @@ if(isMC) {
 		    if (isInEtaRange[iet]) {genjt1_pt[iet]->Fill(tmp4v.perp(), weighttrg);} //genrecojet1_pt = tmp4v.perp();}
 		    if (isPt && iet==0) {genjt1_eta->Fill(tmp4v.eta(), weighttrg);}
 		    if (isEta && isPt) {genjt1_phi->Fill(tmp4v.phi(), weighttrg);}
-			
+			//cout<<"GenJet PT : "<<tmp4v.perp()<<endl;	
 		  } else if(ijet==1){
 		    //cout<<"okkkkkkkk" <<endl;
 		    if (isInEtaRange[iet]) {genjt2_pt[iet]->Fill(tmp4v.perp(), weighttrg);} //genrecojet2_pt = tmp4v.perp();}
@@ -2762,7 +2901,7 @@ if(isMC) {
 		    if (isInEtaRange[iet] && isPt) {genjt2_phi->Fill(tmp4v.phi(), weighttrg);}
 		    if (isInEtaRange[iet] && ncount==2) {
 		      //cout<<"Gen Pt 1= " << avegenpt <<endl;
-		      genjtallave_pt[iet]->Fill(avegenpt, weighttrg);
+		      genjtallave_pt[iet]->Fill(0.5*(tmpgen4v[0].perp()+tmpgen4v[1].perp()), weighttrg);
 		    }
 		  } else if(ijet==2) {
 		    if (isInEtaRange[iet]) {genjt3_pt[iet]->Fill(tmp4v.perp(), weighttrg);}
@@ -2785,7 +2924,7 @@ if(isMC) {
 #ifdef GENPART
 		
 		std::vector <const GenParticle*> daus ((*genjets)[igenjt].getGenConstituents ());
-		//std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });  //need to check 
+		std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });  //need to check 
 		for (unsigned int i2 =0; i2< daus.size(); ++i2) {
 		  const GenParticle* pfcand = daus[i2];
 		  int charge = pfcand->charge();
@@ -2848,13 +2987,13 @@ if(isMC) {
 		//cout<<"-------------"<<endl;
 		if (ijet==0){
 			for (int ik=0; ik<10; ik++){
-			std::vector<reco::CandidatePtr> daus((*genjets)[igenjt].daughterPtrVector());
-                        std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
+			//std::vector<reco::CandidatePtr> daus((*genjets)[igenjt].daughterPtrVector());
+                        //std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
                         for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
                         const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
                         int charge = pfcand.charge();
 			Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
-			if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+			if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && charge !=0){
                 	if(isrc==0){
                         	genrecojet1_pt = tmp3v.perp();
 				
@@ -2874,13 +3013,13 @@ if(isMC) {
 	
 		if (ijet==1){
                         for (int ik=0; ik<10; ik++){
-                        std::vector<reco::CandidatePtr> daus((*genjets)[igenjt].daughterPtrVector());
-                        std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
+                        //std::vector<reco::CandidatePtr> daus((*genjets)[igenjt].daughterPtrVector());
+                        //std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
                         for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
                         const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
                         int charge = pfcand.charge();
                         Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
-                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && charge !=0){
                         if(isrc==0){
 				genrecojet2_pt = tmp3v.perp();
 	
@@ -2955,7 +3094,8 @@ if(isMC) {
 	  } //for (int iet=0; iet<njetetamn; iet++)
 	} // if(genjets.isValid() && genjets->size()>=2 && (*genjets)[0].pt()>leadingPtThreshold[0])
 	// } //if (genjets.isValid() &&  genjets->size()>=2) 
-	h_2ht->Fill(aveleadingpt,avegenpt, weighttrg);
+	//h_2ht->Fill(aveleadingpt,avegenpt, weighttrg);
+	h_2ht->Fill(leadingpt,leadgenpt, weighttrg);
 	///////Response
       } //isMC
       //	cout<<"22 aveleadingpt "<<aveleadingpt<< " ; "<<ihltfill<<" "<<irecoht<<endl;
@@ -3026,7 +3166,23 @@ if(isMC) {
 		genmomJCO[2][0][ik] = (igenjet1_tran_den[ik]);
                 genmomJCO[2][1][ik] = (igenjet2_tran_den[ik]);
 		}
+
 /*
+bool MOM_passed[ndef][njet][nkappa]={{{false}}};
+for(int id=0; id<ndef; id++){
+	for(int ij=0; ij<njet; ij++){
+		for(int ik=0; ik<nkappa; ik++){
+			if (recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0){
+			MOM_passed[id][ij][ik]=true;
+			}
+			//else{MOM_passed=false;}
+		}
+	}
+}
+
+if(!MOM_passed[ndef][njet][nkappa]) return;
+
+
 bool matched_jet=false;
 //double R =0.0;
 for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
@@ -3041,24 +3197,69 @@ for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
 			//R = dR;
 			}
 		}
-*/	
-//if(!matched_jet) return;
+	
+if(!matched_jet) return;
+*/
 
 /*
-for (int iet=0; iet<njetetamn; iet++){
-	if(isMC){
-        	for (int isrc=0; isrc<nGenReso; isrc++) {
-			if (isrc==0 && isReconstruct){
-                        	if( irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recojet1_pt>0 && genrecojet1_pt>0 && matched_jet){
-					if(ak4PFJets->size()>=2 && genjets->size()>=2){
-                                                        RM_test[irecohtjec[isrc]][iet]->Fill(recojet1/pow(recojet1_pt,0.6),genjet1/pow(genrecojet1_pt,0.6),weighttrg);
-							}
-						}
-					}
-				}
-			}				
-		}
+bool leading_jet_matched1 = false, subleading_jet_matched1 = false;
+
+for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
+    std::vector<const pat::PackedCandidate*> jet_particles;
+    std::vector<const reco::GenParticle*> gen_particles;
+    
+    std::vector<reco::CandidatePtr> daus((*ak4PFJets)[ijet].daughterPtrVector());
+    std::sort(daus.begin(), daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
+    for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+    const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
+            jet_particles.push_back(&pfcand);
+    }
+    for(unsigned igjet = 0; igjet != genjets->size(); igjet++){
+        std::vector<reco::CandidatePtr> daus((*genjets)[igjet].daughterPtrVector());
+        std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
+        for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+            const reco::GenParticle &gen_particle = static_cast<const reco::GenParticle &>(*daus[i2]);
+            gen_particles.push_back(&gen_particle);
+        }
+    }
+    for (auto const& jet_particle : jet_particles) {
+        for (auto const& gen_particle : gen_particles) {
+            double dR = deltaR(*gen_particle, *jet_particle);
+	    //cout<<dR<<endl;
+            if (dR < 0.4) {
+                if (ijet == 0) {
+                    leading_jet_matched1 = true;
+                } else if (ijet == 1) {
+                    subleading_jet_matched1 = true;
+                }
+            }
+        }    
+    }
+}
+
+if(!leading_jet_matched1 && !subleading_jet_matched1) return;
 */
+
+
+bool leading_jet_matched = false, subleading_jet_matched = false;
+
+for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
+    for(unsigned igjet = 0; igjet != genjets->size(); igjet++){
+        double dR = deltaR((*genjets)[igjet], (*ak4PFJets)[ijet]);
+        if (dR < 0.2) {
+            if (ijet == 0) {
+                leading_jet_matched = true;
+            } else if (ijet == 1) {
+                subleading_jet_matched = true;
+            }
+            break;
+        }
+    }
+}
+
+if(!leading_jet_matched && !subleading_jet_matched) return;
+
+//RM for Leading Jet-pt
 for (int iet=0; iet<njetetamn; iet++){
         if(isMC){
                 for (int isrc=0; isrc<nGenReso; isrc++) {
@@ -3066,22 +3267,25 @@ for (int iet=0; iet<njetetamn; iet++){
                                 //if( irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && matched_jet){
 				if( igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& matched_jet*/){
                                         if(ak4PFJets->size()>=2 && genjets->size()>=2){
-                                                        //RM_test[irecohtjec[isrc]][iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
-							RM_test[iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
-                                                        }
+                                        	//RM_test[irecohtjec[isrc]][iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
+						RM_test[iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
                                                 }
                                         }
                                 }
                         }
                 }
+	}
 
-
+//Fill the histograms of default JCO for kappa = 0.3, 0.6, 1.0 separetly
 //1D
 bool isRecoJCO1D_test=false;
+bool isGenJCO1D_test=false;
+
 for (int iet=0; iet<njetetamn; iet++){
+if(recojet1_test<=0 && genjet1_test<=0) break;
 	if (isReconstruct) {
         	for (int isrc=0; isrc<njecmx; isrc++) {
-                	if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recojet1_test>0){
+                	if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recojet1_test>0*/){
                         	if (isrc==0) {
                                  	if(ak4PFJets->size()>=2){
 						isRecoJCO1D_test=true;
@@ -3095,8 +3299,8 @@ for (int iet=0; iet<njetetamn; iet++){
 		}
 	if(isMC){
         	for (int isrc=0; isrc<nGenReso; isrc++) {
-			bool isGenJCO1D_test=false;
-			if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genjet1_test>0){
+			//bool isGenJCO1D_test=false;
+			if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genjet1_test>0*/){
                        		if(isrc==0){
                                 	if(genjets->size()>=2){
 						isGenJCO1D_test=true;
@@ -3107,7 +3311,7 @@ for (int iet=0; iet<njetetamn; iet++){
 					}
 			}
 		if (isrc==0 && isReconstruct){
-                	if(isRecoJCO1D_test && isGenJCO1D_test && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recojet1_test>0 && genjet1_test>0 /*&& matched_jet*/){
+                	if(isRecoJCO1D_test && isGenJCO1D_test && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recojet1_test>0 && genjet1_test>0 && matched_jet*/){
                         	if(ak4PFJets->size()>=2 && genjets->size()>=2){
 					h_RM_d0j0k1[irecohtjec[isrc]][iet]->Fill(ijet1candsmomk1/recojet1_test, igenjet1candsmomk1/genjet1_test,weighttrg);
 					h_RM_d0j0k6[irecohtjec[isrc]][iet]->Fill(ijet1candsmomk6/pow(recojet1_test,0.6), igenjet1candsmomk6/pow(genjet1_test,0.6),weighttrg);
@@ -3119,14 +3323,17 @@ for (int iet=0; iet<njetetamn; iet++){
 		}
 	}
 //2D
-bool isRecoJCO_test=false;
+bool isRecoJCO2D_test=false;
+bool isGenJCO2D_test=false;
+
 for (int iet=0; iet<njetetamn; iet++){
+if(recojet1_test<=0 && genjet1_test<=0) break;
         if (isReconstruct) {
                 for (int isrc=0; isrc<njecmx; isrc++) {
-                        if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recojet1_test>0){
+                        if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recojet1_test>0*/){
                                 if (isrc==0) {
                                         if(ak4PFJets->size()>=2){
-						isRecoJCO_test=true;
+						isRecoJCO2D_test=true;
 						int irecbin_d0j0k1 = RecoBinning2D_d0j0k1[iet]->GetGlobalBinNumber(ijet1candsmomk1/recojet1_test,leadingptjec[isrc]);  
                                                 h_reco2D_d0j0k1[iet]->Fill(irecbin_d0j0k1,weighttrg);
 						
@@ -3145,11 +3352,11 @@ for (int iet=0; iet<njetetamn; iet++){
                 }
         if(isMC){
                 for (int isrc=0; isrc<nGenReso; isrc++) {
-			 bool isGenJCO_test=false;
-                        if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genjet1_test>0){
+			 //bool isGenJCO2D_test=false;
+                        if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genjet1_test>0*/){
                                 if(isrc==0){
                                         if(genjets->size()>=2){
-						isGenJCO_test=true;
+						isGenJCO2D_test=true;
 						int igenbin_d0j0k1 = GenBinning2D_d0j0k1[iet]->GetGlobalBinNumber(igenjet1candsmomk1/genjet1_test,leadgenptres[isrc]);
                                                 h_gen2D_d0j0k1[iet]->Fill(igenbin_d0j0k1,weighttrg);
                                  
@@ -3165,7 +3372,7 @@ for (int iet=0; iet<njetetamn; iet++){
                                         }
                         	}
                 if (isrc==0 && isReconstruct){
-                        if(isRecoJCO_test && isGenJCO_test && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recojet1_test>0 && genjet1_test>0 /*&& matched_jet*/){
+                        if(isRecoJCO2D_test && isGenJCO2D_test && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recojet1_test>0 && genjet1_test>0 && matched_jet*/){
                                 if(ak4PFJets->size()>=2 && genjets->size()>=2){
 						int irecbin_d0j0k1 = RecoBinning2D_d0j0k1[iet]->GetGlobalBinNumber(ijet1candsmomk1/recojet1_test,leadingptjec[isrc]);
 						int igenbin_d0j0k1 = GenBinning2D_d0j0k1[iet]->GetGlobalBinNumber(igenjet1candsmomk1/genjet1_test,leadgenptres[isrc]);
@@ -3192,18 +3399,23 @@ for (int iet=0; iet<njetetamn; iet++){
                         }
                 }
         }
+
+//Histograms are filled using array for all the kappa values
 //1D
-bool isRecoJCO1D=false;
+bool isRecoJCO1D[njetetamn][ndef][njet][nkappa]={{{{false}}}};
+bool isGenJCO1D[njetetamn][ndef][njet][nkappa]={{{{false}}}};
+
 for (int iet=0; iet<njetetamn; iet++){
 for(int id=0; id<ndef; id++){
 for(int ij=0; ij<njet; ij++){
 for(int ik=0; ik<nkappa; ik++){
+	if(recomomJCO[id][ij][ik]<=0 && genmomJCO[id][ij][ik]<=0) continue;
                         if (isReconstruct) {
 				for (int isrc=0; isrc<njecmx; isrc++) {
-                                        if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0){
+                                        if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recomomJCO[id][ij][ik]>0*/){
                                                 if (isrc==0) {
                                                         if(ak4PFJets->size()>=2){
-                                                        isRecoJCO1D=true;
+                                                        isRecoJCO1D[iet][id][ij][ik]=true;
                                                         h_recovar[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],weighttrg);
                                                                 }
                                                         }
@@ -3212,17 +3424,17 @@ for(int ik=0; ik<nkappa; ik++){
                                 }//if (isReconstruct) {
 			if(isMC){
                                  for (int isrc=0; isrc<nGenReso; isrc++) {
-                                        bool isGenJCO1D=false;
-                                        if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmomJCO[id][ij][ik]>0){
+                                        //bool isGenJCO1D=false;
+                                        if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genmomJCO[id][ij][ik]>0*/){
                                                 if(isrc==0){
                                                         if(genjets->size()>=2){
-                                                        isGenJCO1D=true;
+                                                        isGenJCO1D[iet][id][ij][ik]=true;
                                                         h_genvar[igenhtres[isrc]][iet][id][ij][ik]->Fill(GenJCO[id][ij][ik],weighttrg);
                                                                 }
                                                         }
                                                 }
 					if (isrc==0 && isReconstruct){
-                                                if( isRecoJCO1D && isGenJCO1D && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 /*&& matched_jet*/){
+                                                if( isRecoJCO1D[iet][id][ij][ik] && isGenJCO1D[iet][id][ij][ik] && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 && matched_jet*/){
                                                 if(ak4PFJets->size()>=2 && genjets->size()>=2){
 							h_RM[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik],weighttrg);
                                                         h_RM_WOW[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik]);
@@ -3238,11 +3450,11 @@ for(int ik=0; ik<nkappa; ik++){
                                                         }
                                                 }
 						else{
-                                                        if( isRecoJCO1D && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && ak4PFJets->size()>=2){
+                                                        if( isRecoJCO1D[iet][id][ij][ik] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recomomJCO[id][ij][ik]>0*/ && ak4PFJets->size()>=2){
                                                                 h_recofake[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],weighttrg);
                                                                 //cout <<"RecoFake JCO : "<< RecoJCO[id][ij][ik]<< "  id : "<<id<< "  ij : "<<ij<<"  ik : "<<ik<<endl;
 							}
-                                                        if(isGenJCO1D && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmomJCO[id][ij][ik]>0 && genjets->size()>=2){
+                                                        if(isGenJCO1D[iet][id][ij][ik] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genmomJCO[id][ij][ik]>0*/ && genjets->size()>=2){
                                                                 h_genmiss[igenhtres[isrc]][iet][id][ij][ik]->Fill(GenJCO[id][ij][ik],weighttrg);
                                                                 //cout <<"GenMiss JCO : "<< GenJCO[id][ij][ik]<< "  id : "<<id<< "  ij : "<<ij<<"  ik : "<<ik<<endl;
                                                                 }
@@ -3256,17 +3468,20 @@ for(int ik=0; ik<nkappa; ik++){
 }//for (int iet=0; iet<njetetamn; iet++){
 
 //2D
-bool isRecoJCO=false;
+bool isRecoJCO2D[njetetamn][ndef][njet][nkappa]={{{{false}}}};
+bool isGenJCO2D[njetetamn][ndef][njet][nkappa]={{{{false}}}};
+
 for (int iet=0; iet<njetetamn; iet++){
 for(int id=0; id<ndef; id++){
 for(int ij=0; ij<njet; ij++){
 for(int ik=0; ik<nkappa; ik++){
+	if(recomomJCO[id][ij][ik]<=0 && genmomJCO[id][ij][ik]<=0) continue;
                         if (isReconstruct) {
                                 for (int isrc=0; isrc<njecmx; isrc++) {
-					if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0){
+					if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recomomJCO[id][ij][ik]>0*/){
                                                 if (isrc==0) {
 							if(ak4PFJets->size()>=2){
-							isRecoJCO=true;
+							isRecoJCO2D[iet][id][ij][ik]=true;
 							//h_recovar[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],weighttrg);
 							int irecbin = RecoBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(RecoJCO[id][ij][ik],leadingptjec[isrc]);
 							h_recovar2D[iet][id][ij][ik]->Fill(irecbin, weighttrg);
@@ -3277,11 +3492,11 @@ for(int ik=0; ik<nkappa; ik++){
 				}//if (isReconstruct) {
 			if(isMC){
 				 for (int isrc=0; isrc<nGenReso; isrc++) {
-					bool isGenJCO=false;
-					if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmomJCO[id][ij][ik]>0){
+					//bool isGenJCO2D[njetetamn][ndef][njet][nkappa]={{{{false}}}};
+					if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genmomJCO[id][ij][ik]>0*/){
 						if(isrc==0){
 							if(genjets->size()>=2){
-							isGenJCO=true;
+							isGenJCO2D[iet][id][ij][ik]=true;
 							//h_genvar[igenhtres[isrc]][iet][id][ij][ik]->Fill(GenJCO[id][ij][ik],weighttrg);
 							int igenbin = GenBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(GenJCO[id][ij][ik],leadgenptres[isrc]);
                                                         h_genvar2D[iet][id][ij][ik]->Fill(igenbin, weighttrg);
@@ -3290,9 +3505,8 @@ for(int ik=0; ik<nkappa; ik++){
 						}
 					if (isrc==0 && isReconstruct){
 						//if( isRecoJCO && isGenJCO && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 && matched_jet){
-						if( isRecoJCO && isGenJCO && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 /*&& matched_jet*/){
+						if( isRecoJCO2D[iet][id][ij][ik] && isGenJCO2D[iet][id][ij][ik] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.1 && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 && matched_jet*/){
 						if(ak4PFJets->size()>=2 && genjets->size()>=2){
-							//RM_test[irecohtjec[isrc]][iet][id][ij][ik]->Fill(recojet1,genjet1,weighttrg);
 							h_RM_2DC[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik],weighttrg);
 							h_RM_2DC_WOW[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik]);
 							
@@ -3315,13 +3529,13 @@ for(int ik=0; ik<nkappa; ik++){
 							}
 						}
 						else{
-							if( isRecoJCO && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && ak4PFJets->size()>=2){
+							if( isRecoJCO2D[iet][id][ij][ik] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& recomomJCO[id][ij][ik]>0*/ && ak4PFJets->size()>=2){
 								//h_recofake[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],weighttrg);
 								int irecbin = RecoBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(RecoJCO[id][ij][ik],leadingptjec[isrc]);
                                                         	h_recofake2D[iet][id][ij][ik]->Fill(irecbin, weighttrg);
 								//cout <<"RecoFake JCO : "<< RecoJCO[id][ij][ik]<< "  id : "<<id<< "  ij : "<<ij<<"  ik : "<<ik<<endl;
 								}
-							if(isGenJCO && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmomJCO[id][ij][ik]>0 && genjets->size()>=2){
+							if(isGenJCO2D[iet][id][ij][ik] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn /*&& genmomJCO[id][ij][ik]>0*/ && genjets->size()>=2){
 								//h_genmiss[igenhtres[isrc]][iet][id][ij][ik]->Fill(GenJCO[id][ij][ik],weighttrg);
 								int igenbin = GenBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(GenJCO[id][ij][ik],leadgenptres[isrc]);
 	                                                        h_genmiss2D[iet][id][ij][ik]->Fill(igenbin, weighttrg);
@@ -3337,6 +3551,28 @@ for(int ik=0; ik<nkappa; ik++){
 }//for (int iet=0; iet<njetetamn; iet++){
 //cout <<"-------------"<<endl;
       
+for (int iet=0; iet<njetetamn; iet++){
+for(int id=0; id<ndef; id++){
+for(int ij=0; ij<njet; ij++){
+for(int ik=0; ik<nkappa; ik++){
+        if(isMC){
+                for (int isrc=0; isrc<nGenReso; isrc++) {
+                        if (isrc==0 && isReconstruct){
+                                if(igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.3 && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0){
+                                	if(ak4PFJets->size()>=2 && genjets->size()>=2){
+                                                int irecbin = RecoBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(RecoJCO[id][ij][ik],leadingptjec[isrc]);
+                                                int igenbin = GenBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(GenJCO[id][ij][ik],leadgenptres[isrc]);
+                                                h_RM2D_Test[iet][id][ij][ik]->Fill(irecbin,igenbin,weighttrg);
+                                               			}
+                                        		}
+                                		}
+                        		}
+                		}
+			}
+		}
+	}
+}
+
 	//if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
       	//if (nevt%1000==1) { std::cout <<"Reco "<< Reco << " Gen " <<Gen<< " RM " <<RM <<std::endl;}
       	//if(nevt==100){cout <<igenht <<endl;}
@@ -3394,6 +3630,8 @@ QCDEventShape::endJob()
 					h_recofake2D[iet][id][ij][ik]->Write();
 					h_genmiss2D[iet][id][ij][ik]->Write();
 					h_RM2D[iet][id][ij][ik]->Write();
+
+					h_RM2D_Test[iet][id][ij][ik]->Write();
 					}
 				}
 			}
@@ -3508,8 +3746,8 @@ double JetCharge1(int charge, double candspt, double jpt, double k) {
 
 // For default definition Q
 double candsmom(int charge, double candspt, double k){	
-	double q = 0.0;
-	q = ( charge*(pow(candspt,k)));
+	//double q = 0.0;
+	double q = ( charge*(pow(candspt,k)));
 	return q;
 }
 /*
