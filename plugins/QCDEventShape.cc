@@ -585,9 +585,9 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
-  //bool isFlat=1;
+  bool isFlat=1;
 //#else 
-  bool isFlat=0;
+  //bool isFlat=0;
 //#endif
 
    float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
@@ -1810,8 +1810,8 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
   std::vector<HepLorentzVector> tmpjt4v;                                                  
   std::vector<HepLorentzVector> tmpgen4v;
   
-  recojet1_pt = 0.0, recojet2_pt = 0.0;
-  genrecojet1_pt = 0.0, genrecojet2_pt = 0.0;
+  recojet1_pt = 0.0/*, recojet2_pt = 0.0*/;
+  genrecojet1_pt = 0.0/*, genrecojet2_pt = 0.0*/;
  
   double RecoJCO[ndef][njet][nkappa] = {{{0.0}}};
   double GenJCO[ndef][njet][nkappa] = {{{0.0}}};
@@ -1821,11 +1821,11 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 //------------------------------------------
 
   //double recojet1 = 0.0, genjet1 = 0.0;
-  double ijet1candsmom[nkappa] = {0.0}, ijet1_long_num[nkappa] = {0.0}, ijet1_long_den[nkappa] = {0.0}, ijet1_tran_num[nkappa] = {0.0}, ijet1_tran_den[nkappa] = {0.0};
-  double ijet2candsmom[nkappa] = {0.0}, ijet2_long_num[nkappa] = {0.0}, ijet2_long_den[nkappa] = {0.0}, ijet2_tran_num[nkappa] = {0.0}, ijet2_tran_den[nkappa] = {0.0}; 
+  double ijet1candsmom[nkappa] = {0.0}, ijet1candsmom_den[nkappa] = {0.0}, ijet1_long_num[nkappa] = {0.0}, ijet1_long_den[nkappa] = {0.0}, ijet1_tran_num[nkappa] = {0.0}, ijet1_tran_den[nkappa] = {0.0};
+  double ijet2candsmom[nkappa] = {0.0},ijet2candsmom_den[nkappa] = {0.0}, ijet2_long_num[nkappa] = {0.0}, ijet2_long_den[nkappa] = {0.0}, ijet2_tran_num[nkappa] = {0.0}, ijet2_tran_den[nkappa] = {0.0}; 
   
-  double igenjet1candsmom[nkappa] = {0.0}, igenjet1_long_num[nkappa] = {0.0}, igenjet1_long_den[nkappa] = {0.0}, igenjet1_tran_num[nkappa] = {0.0}, igenjet1_tran_den[nkappa] = {0.0}; 
-  double igenjet2candsmom[nkappa] = {0.0}, igenjet2_long_num[nkappa] = {0.0}, igenjet2_long_den[nkappa] = {0.0}, igenjet2_tran_num[nkappa] = {0.0}, igenjet2_tran_den[nkappa] = {0.0};
+  double igenjet1candsmom[nkappa] = {0.0}, igenjet1candsmom_den[nkappa] = {0.0}, igenjet1_long_num[nkappa] = {0.0}, igenjet1_long_den[nkappa] = {0.0}, igenjet1_tran_num[nkappa] = {0.0}, igenjet1_tran_den[nkappa] = {0.0}; 
+  double igenjet2candsmom[nkappa] = {0.0}, igenjet2candsmom_den[nkappa] = {0.0}, igenjet2_long_num[nkappa] = {0.0}, igenjet2_long_den[nkappa] = {0.0}, igenjet2_tran_num[nkappa] = {0.0}, igenjet2_tran_den[nkappa] = {0.0};
 
   double recojet1_test =0.0, genjet1_test =0.0;
   double ijet1candsmomk1 =0.0, ijet1candsmomk6 =0.0, ijet1candsmomk3 =0.0, igenjet1candsmomk1 =0.0, igenjet1candsmomk6 =0.0, igenjet1candsmomk3 =0.0;
@@ -2448,9 +2448,9 @@ if (ak4PFJets.isValid() && ak4PFJets->size() >= 2 && genjets.isValid() && genjet
 
                     for (unsigned int igen = 0; igen < gendaus.size(); ++igen) {
                         const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*gendaus[igen]);
-			if(recocand.pt()<1.0 || abs(recocand.eta())>2.5 || gencand.pt()<1.0 || abs(gencand.eta())>2.5) continue;
+			if(recocand.pt()<1.0 || abs(recocand.eta())>2.5 || gencand.pt()<1.0 || abs(gencand.eta())>2.5 || recocand.charge()==0 || gencand.charge()==0) continue;
                         double partdR = deltaR(recocand, gencand);
-                        if (partdR < 0.03 && recocand.charge() == gencand.charge() && !matched_recodaus[ireco] && !matched_gendaus[igen]) {
+                        if (partdR < 0.05 && recocand.charge() == gencand.charge() && !matched_recodaus[ireco] && !matched_gendaus[igen]) {
                             matched_recodaus[ireco] = true;
                             matched_gendaus[igen] = true;
                             matched_recoparts.push_back(recodaus[ireco]);
@@ -3039,18 +3039,21 @@ if(ijet==0){
                 if (recocand.charge() == matched_recocand.charge() && deltaR(recocand, matched_recocand) < 1e-4) {
 			int charge = recocand.charge();
 			Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
-			if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+			if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
 			if(isrc==0){
 				recojet1_pt = tmp3v.perp();	
 				
 				ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				//ijet1candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+				ijet1candsmom_den[ik] += (cand3v.perp());
 
 	                        ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
         	                ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
 
                 	        ijet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
                       		ijet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
-				//cout<<"Leading RecoJet PT : "<<tmp3v.perp()<<endl;
+				//cout<<"Leading RecoJet PT : "<<ijet1candsmom_den[ik]<<" kappa : "<<ik<<" PF : "<<cand3v.perp()<<endl;
+				//cout<<"Total Leading RecoJet PT : "<<tmp3v.perp()<<endl;
 				//cout<<"Leading RecoJet Particle check : pt : "<<recocand.pt()<<" eta : "<<recocand.eta()<<" ID : "<<recocand.pdgId()<<" charge : "<<recocand.charge()<<endl;
 						}
 					}
@@ -3062,11 +3065,13 @@ if(ijet==0){
                 const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
 		int charge = recocand.charge();
                         Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
-                        if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
                         if(isrc==0){
                                 recojet1_pt = tmp3v.perp();
 
                                 ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				//ijet1candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+				ijet1candsmom_den[ik] += (cand3v.perp());
 
                                 ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                                 ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3095,11 +3100,15 @@ if(ijet==1){
                 if (recocand.charge() == matched_recocand.charge() && deltaR(recocand, matched_recocand) < 1e-4) {
                         int charge = recocand.charge();
                         Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
-                        if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
                         if(isrc==0){
-				recojet2_pt = tmp3v.perp();
+				//recojet2_pt = tmp3v.perp();
 
-	                        ijet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+	                        //ijet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+	                        
+				ijet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				//ijet2candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+				ijet2candsmom_den[ik] += (cand3v.perp());
 
         	                ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                 	        ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3118,11 +3127,14 @@ if(ijet==1){
                 const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
                 int charge = recocand.charge();
                 Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
-                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5){
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
                 if(isrc==0){
-			recojet2_pt = tmp3v.perp();
+			//recojet2_pt = tmp3v.perp();
 
-                        ijet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+                        //ijet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+			ijet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        //ijet2candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+			ijet2candsmom_den[ik] += (cand3v.perp());
 
                         ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                         ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3510,18 +3522,21 @@ if(ijet==1){
 				int charge = gencand.charge();
                         	Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
 
-                        	if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+                        	if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
                         	if(isrc==0){
                                 	genrecojet1_pt = tmp3v.perp();
                                 
                                 	igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+					//igenjet1candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+					igenjet1candsmom_den[ik] += (cand3v.perp());
 
                                 	igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                                 	igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
 
                                 	igenjet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
                                 	igenjet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
-					//cout<<"Leading GenJet PT : "<<tmp3v.perp()<<endl;
+					//cout<<"Leading GenJet PT : "<<igenjet1candsmom_den[ik]<<" kappa : "<<ik<<" PF : "<<cand3v.perp()<<endl;
+					//cout<<"Total Leading GenJet PT : "<<tmp3v.perp()<<endl;
 					//cout<<"Leading GenJet Particle check : pt : "<<gencand.pt()<<" eta : "<<gencand.eta()<<" ID : "<<gencand.pdgId()<<" charge : "<<gencand.charge()<<endl;
 						}
 					}
@@ -3534,11 +3549,13 @@ if(ijet==1){
 				
                         int charge = gencand.charge();
                         Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
-                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
                         if(isrc==0){
                                 genrecojet1_pt = tmp3v.perp();
                                 
                                 igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				//igenjet1candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+				igenjet1candsmom_den[ik] += (cand3v.perp());
 
                                 igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                                 igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3567,11 +3584,14 @@ if(ijet==1){
                                 if (gencand.charge() == matched_gencand.charge() && deltaR(gencand, matched_gencand) < 1e-4) {
                                 int charge = gencand.charge();
                                 Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
-                                if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+                                if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
                                 if(isrc==0){
-					genrecojet2_pt = tmp3v.perp();
+					//genrecojet2_pt = tmp3v.perp();
         
-	                                igenjet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+	                                //igenjet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+					igenjet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+					//igenjet2candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+					igenjet2candsmom_den[ik] += (cand3v.perp());
 
         	                        igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                 	                igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3591,11 +3611,14 @@ if(ijet==1){
                                 
                         int charge = gencand.charge();
                         Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
-                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5)){
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
                         if(isrc==0){
-				 genrecojet2_pt = tmp3v.perp();
+				 //genrecojet2_pt = tmp3v.perp();
 
-                                        igenjet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+                                        //igenjet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+                                        igenjet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+					//igenjet2candsmom_den[ik] += (pow(cand3v.perp(), kappa[ik]));
+					igenjet2candsmom_den[ik] += (cand3v.perp());
 
                                         igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                                         igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3690,8 +3713,17 @@ if(ijet==1){
 	hchpt->Fill(recojet1_pt,nchg,weighttrg);
 
 	for (int ik=0; ik<nkappa; ik++){	
-		RecoJCO[0][0][ik] = (ijet1candsmom[ik]/(pow(recojet1_pt,kappa[ik])));
-		RecoJCO[0][1][ik] = (ijet2candsmom[ik]/(pow(recojet2_pt,kappa[ik])));
+		//RecoJCO[0][0][ik] = (ijet1candsmom[ik]/(pow(recojet1_pt,kappa[ik])));
+		//RecoJCO[0][1][ik] = (ijet2candsmom[ik]/(pow(recojet2_pt,kappa[ik])));
+
+		//RecoJCO[0][0][ik] = (ijet1candsmom[ik]/ijet1candsmom_den[ik]);
+                //RecoJCO[0][1][ik] = (ijet2candsmom[ik]/ijet2candsmom_den[ik]);
+
+		RecoJCO[0][0][ik] = (ijet1candsmom[ik]/(pow(ijet1candsmom_den[ik],kappa[ik])));
+                RecoJCO[0][1][ik] = (ijet2candsmom[ik]/(pow(ijet2candsmom_den[ik],kappa[ik])));
+
+		//cout<<"PF Lead RecoJet PT : "<<ijet1candsmom_den[ik]<<" weight : "<<(pow(ijet1candsmom_den[ik],kappa[ik]))<<" kappa : "<<ik<<endl;
+		//cout<<"PF Lead GenJet PT : "<<igenjet1candsmom_den[ik]<<" weight : "<<(pow(igenjet1candsmom_den[ik],kappa[ik]))<<" kappa : "<<ik<<endl;
 
 		RecoJCO[1][0][ik] = (ijet1_long_num[ik]/ijet1_long_den[ik]);
 		RecoJCO[1][1][ik] = (ijet2_long_num[ik]/ijet2_long_den[ik]);
@@ -3699,8 +3731,14 @@ if(ijet==1){
 		RecoJCO[2][0][ik] = (ijet1_tran_num[ik]/ijet1_tran_den[ik]);
 		RecoJCO[2][1][ik] = (ijet2_tran_num[ik]/ijet2_tran_den[ik]);
 
-		GenJCO[0][0][ik] = (igenjet1candsmom[ik]/(pow(genrecojet1_pt,kappa[ik])));
-		GenJCO[0][1][ik] = (igenjet2candsmom[ik]/(pow(genrecojet2_pt,kappa[ik])));
+		//GenJCO[0][0][ik] = (igenjet1candsmom[ik]/(pow(genrecojet1_pt,kappa[ik])));
+		//GenJCO[0][1][ik] = (igenjet2candsmom[ik]/(pow(genrecojet2_pt,kappa[ik])));
+
+		//GenJCO[0][0][ik] = (igenjet1candsmom[ik]/igenjet1candsmom_den[ik]);
+                //GenJCO[0][1][ik] = (igenjet2candsmom[ik]/igenjet2candsmom_den[ik]);
+
+		GenJCO[0][0][ik] = (igenjet1candsmom[ik]/(pow(igenjet1candsmom_den[ik],kappa[ik])));
+                GenJCO[0][1][ik] = (igenjet2candsmom[ik]/(pow(igenjet2candsmom_den[ik],kappa[ik])));
 
 		GenJCO[1][0][ik] = (igenjet1_long_num[ik]/igenjet1_long_den[ik]);
 		GenJCO[1][1][ik] = (igenjet2_long_num[ik]/igenjet2_long_den[ik]);
@@ -3726,8 +3764,14 @@ if(ijet==1){
 		GenJCO[2][0][ik] = (igenjet1_tran_den[ik]>0) ? (igenjet1_tran_num[ik]/igenjet1_tran_den[ik]) : 0 ;
 		GenJCO[2][1][ik] = (igenjet2_tran_den[ik]>0) ? (igenjet2_tran_num[ik]/igenjet2_tran_den[ik]) : 0 ;
 */	
-		recomomJCO[0][0][ik] = (pow(recojet1_pt,kappa[ik]));
-		recomomJCO[0][1][ik] = (pow(recojet2_pt,kappa[ik]));
+		//recomomJCO[0][0][ik] = (pow(recojet1_pt,kappa[ik]));
+		//recomomJCO[0][1][ik] = (pow(recojet2_pt,kappa[ik]));
+		
+		//recomomJCO[0][0][ik] = (ijet1candsmom_den[ik]);
+                //recomomJCO[0][1][ik] = (ijet2candsmom_den[ik]);
+
+		recomomJCO[0][0][ik] = (pow(ijet1candsmom_den[ik],kappa[ik]));
+                recomomJCO[0][1][ik] = (pow(ijet2candsmom_den[ik],kappa[ik]));
 
 		recomomJCO[1][0][ik] = (ijet1_long_den[ik]);
                 recomomJCO[1][1][ik] = (ijet2_long_den[ik]);
@@ -3735,8 +3779,14 @@ if(ijet==1){
 		recomomJCO[2][0][ik] = (ijet1_tran_den[ik]);
                 recomomJCO[2][1][ik] = (ijet2_tran_den[ik]);
 
-		genmomJCO[0][0][ik] = (pow(genrecojet1_pt,kappa[ik]));
-		genmomJCO[0][1][ik] = (pow(genrecojet2_pt,kappa[ik]));
+		//genmomJCO[0][0][ik] = (pow(genrecojet1_pt,kappa[ik]));
+		//genmomJCO[0][1][ik] = (pow(genrecojet2_pt,kappa[ik]));
+
+		//genmomJCO[0][0][ik] = (igenjet1candsmom_den[ik]);
+                //genmomJCO[0][1][ik] = (igenjet2candsmom_den[ik]);
+
+		genmomJCO[0][0][ik] = (pow(igenjet1candsmom_den[ik],kappa[ik]));
+                genmomJCO[0][1][ik] = (pow(igenjet2candsmom_den[ik],kappa[ik]));
 
 		genmomJCO[1][0][ik] = (igenjet1_long_den[ik]);
                 genmomJCO[1][1][ik] = (igenjet2_long_den[ik]);
