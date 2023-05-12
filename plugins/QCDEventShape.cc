@@ -51,6 +51,7 @@
 ////For GenParticle only
 //#define GENPART
 
+#define MATCHING
 
 #include <memory>
 #include <map>
@@ -251,6 +252,149 @@ double genmin[ndef][njet][nkappa]={{{-4.0,-3.0,-2.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.
 double genmax[ndef][njet][nkappa]={{{4.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0},{4.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}},
                                         {{0.4,0.6,0.6,0.6,0.6,0.8,0.8,0.8,1.0,1.0},{0.4,0.6,0.6,0.6,0.6,0.8,0.8,0.8,1.0,1.0}},
                                         {{0.4,0.4,0.4,0.4,0.6,0.6,0.8,0.8,0.8,0.8},{0.4,0.4,0.4,0.4,0.6,0.6,0.8,0.8,0.8,0.8}}};
+
+//Date_11May2023
+//Bin edge
+double nrecobins[ndef][njet][nkappa]={{{72,46,32,22,22,22,22,22,22,36},{80,52,34,22,22,22,24,32,38,40}},
+					{{16,24,24,22,22,26,26,28,36,36},{16,24,24,24,24,30,32,32,40,40}},
+					{{16,16,16,16,18,18,20,18,16,16},{16,16,16,16,22,18,22,22,20,16}}};
+
+double ngenbins[ndef][njet][nkappa]={{{36,23,16,11,11,11,11,11,11,18},{40,26,17,11,11,11,12,16,19,20}},
+					{{8,12,12,11,11,13,13,14,18,18},{8,12,12,12,12,15,16,16,20,20}},
+					{{8,8,8,8,9,9,10,9,8,8},{8,8,8,8,11,9,11,11,10,8}}};
+
+double recorng[ndef][njet][nkappa][100]={{{{-4.00,-3.80,-3.60,-3.50,-3.40,-3.20,-3.00,-2.90,-2.80,-2.70,-2.60,-2.50,-2.40,-2.30,-2.20,-2.10,-2.00,-1.90,-1.80,-1.70,-1.60,-1.50,-1.40,-1.30,-1.20,-1.10,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80,1.90,2.00,2.10,2.20,2.30,2.40,2.50,2.60,2.70,2.80,3.00,3.20,3.30,3.40,3.60,3.80,3.90,4.00},
+{-3.00,-2.90,-2.80,-2.60,-2.40,-2.20,-2.00,-1.80,-1.60,-1.50,-1.40,-1.30,-1.20,-1.10,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.30,1.40,1.60,1.80,2.00,2.20,2.40,2.60,2.80,3.00},
+{-2.00,-1.90,-1.80,-1.60,-1.40,-1.20,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.20,1.40,1.60,1.80,1.90,2.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00}},
+
+{{-4.00,-3.90,-3.80,-3.70,-3.60,-3.50,-3.40,-3.30,-3.20,-3.10,-3.00,-2.90,-2.80,-2.70,-2.60,-2.50,-2.40,-2.30,-2.20,-2.10,-2.00,-1.90,-1.80,-1.70,-1.60,-1.50,-1.40,-1.30,-1.20,-1.10,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80,1.90,2.00,2.10,2.20,2.30,2.40,2.50,2.60,2.70,2.80,2.90,3.00,3.10,3.20,3.30,3.40,3.50,3.60,3.70,3.80,3.90,4.00},
+{-3.00,-2.90,-2.80,-2.60,-2.40,-2.20,-2.00,-1.90,-1.80,-1.70,-1.60,-1.50,-1.40,-1.30,-1.20,-1.10,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80,1.90,2.00,2.20,2.40,2.60,2.80,2.90,3.00},
+{-2.00,-1.90,-1.80,-1.60,-1.40,-1.30,-1.20,-1.10,-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00,1.10,1.20,1.40,1.60,1.80,2.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.75,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.90,-0.80,-0.70,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.10,0.00,0.10,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.85,-0.80,-0.75,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00}}},
+
+{{{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.50,0.60,0.65,0.70,0.75,0.80},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.50,0.60,0.65,0.70,0.75,0.80},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.80,-0.70,-0.60,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00}},
+
+{{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60},
+{-0.80,-0.70,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80},
+{-0.80,-0.75,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80},
+{-0.80,-0.75,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80},
+{-1.00,-0.95,-0.90,-0.85,-0.80,-0.75,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00},
+{-1.00,-0.95,-0.90,-0.85,-0.80,-0.75,-0.70,-0.65,-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.00}}},
+
+{{{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.60,-0.55,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.55,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.50,0.60},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.60,0.80},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.20,0.30,0.40,0.50,0.65,0.80},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.65,0.80},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.65,0.80}},
+
+{{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.35,0.40},
+{-0.60,-0.55,-0.50,-0.45,-0.40,-0.35,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.25,0.30,0.40,0.50,0.55,0.60},
+{-0.60,-0.55,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.50,0.60},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.55,0.70,0.75,0.80},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.15,0.20,0.30,0.40,0.55,0.70,0.75,0.80},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.25,-0.20,-0.15,-0.10,-0.05,0.00,0.05,0.10,0.20,0.30,0.40,0.50,0.65,0.80},
+{-0.80,-0.75,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.65,0.80}}}};
+
+double genrng[ndef][njet][nkappa][100]={
+{{{-4.00,-3.60,-3.40,-3.00,-2.80,-2.60,-2.40,-2.20,-2.00,-1.80,-1.60,-1.40,-1.20,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.20,1.40,1.60,1.80,2.00,2.20,2.40,2.60,2.80,3.20,3.40,3.80,4.00},
+{-3.00,-2.80,-2.40,-2.00,-1.60,-1.40,-1.20,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.20,1.40,1.80,2.20,2.60,3.00},
+{-2.00,-1.80,-1.40,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.40,1.80,2.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00}},
+
+{{-4.00,-3.80,-3.60,-3.40,-3.20,-3.00,-2.80,-2.60,-2.40,-2.20,-2.00,-1.80,-1.60,-1.40,-1.20,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.20,1.40,1.60,1.80,2.00,2.20,2.40,2.60,2.80,3.00,3.20,3.40,3.60,3.80,4.00},
+{-3.00,-2.80,-2.40,-2.00,-1.80,-1.60,-1.40,-1.20,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.20,1.40,1.60,1.80,2.00,2.40,2.80,3.00},
+{-2.00,-1.80,-1.40,-1.20,-1.00,-0.80,-0.60,-0.40,-0.20,0.00,0.20,0.40,0.60,0.80,1.00,1.20,1.60,2.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.70,0.80,0.90,1.00},
+{-1.00,-0.80,-0.60,-0.50,-0.40,-0.30,-0.20,0.00,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00},
+{-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00}}},
+
+{{{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.80,-0.60,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.60,0.70,0.80},
+{-0.80,-0.60,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.60,0.70,0.80},
+{-0.80,-0.60,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80},
+{-1.00,-0.90,-0.70,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00},
+{-1.00,-0.90,-0.70,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00}},
+
+{{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60},
+{-0.80,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80},
+{-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80},
+{-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00},
+{-1.00,-0.90,-0.80,-0.70,-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00}}},
+
+{{{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.60,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.60},
+{-0.60,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.60},
+{-0.80,-0.60,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.80},
+{-0.80,-0.60,-0.40,-0.20,-0.10,0.00,0.10,0.30,0.50,0.80},
+{-0.80,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.80},
+{-0.80,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.80}},
+
+{{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.40},
+{-0.60,-0.50,-0.40,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.30,0.50,0.60},
+{-0.60,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.60},
+{-0.80,-0.70,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.70,0.80},
+{-0.80,-0.70,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.20,0.40,0.70,0.80},
+{-0.80,-0.70,-0.50,-0.30,-0.20,-0.10,0.00,0.10,0.30,0.50,0.80},
+{-0.80,-0.70,-0.50,-0.30,-0.10,0.10,0.30,0.50,0.80}}}};
 
 /*
 const int nreco_d0j0k1 =40;
@@ -585,9 +729,9 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
-  bool isFlat=1;
+  //bool isFlat=1;
 //#else 
-  //bool isFlat=0;
+  bool isFlat=0;
 //#endif
 
    float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
@@ -922,7 +1066,7 @@ edm::LumiReWeighting *LumiWeights_;
   char RecoBinName[100], GenBinName[100], Axisname[100]; 
   char name[200];
   char title[200];
-
+cout<<"Debug 1 "<<endl;
 //-------------------------------------------Define TUnfoldBinning Jet Charge
 //Binning scheme for both RECO & GEN and for all 3 definition, 2 jets and 10 kappas using array
 for (int iet=0; iet<njetetamn; iet++) {
@@ -934,7 +1078,8 @@ for (int iet=0; iet<njetetamn; iet++) {
                 		sprintf(RecoBinName, "Recobin2d_eta%i_d%i_j%i_k%i",iet, id,ij,ik);
                 		RecoBinning2D[iet][id][ij][ik] = binsRec2D[iet][id][ij][ik]->AddBinning(RecoBinName);
                 		sprintf(Axisname, "d%i_j%i_k%i", id,ij,ik);
-                		RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], false, false);
+                		//RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, recobins[id][ij][ik], recomin[id][ij][ik], recomax[id][ij][ik], false, false);
+				RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nrecobins[id][ij][ik], recorng[id][ij][ik], false, false);
                 		sprintf(Axisname, "pt");
                 		RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
 				//RecoBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
@@ -944,7 +1089,8 @@ for (int iet=0; iet<njetetamn; iet++) {
                 		sprintf(GenBinName, "Genbin2d_eta%i_d%i_j%i_k%i",iet,id,ij,ik);
                 		GenBinning2D[iet][id][ij][ik] = binsGen2D[iet][id][ij][ik]->AddBinning(GenBinName);
                			sprintf(Axisname, "d%i_j%i_k%i", id, ij, ik);
-                		GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik], false, false);
+                		//GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, genbins[id][ij][ik], genmin[id][ij][ik], genmax[id][ij][ik], false, false);
+				GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, ngenbins[id][ij][ik], genrng[id][ij][ik], false, false);
                 		sprintf(Axisname, "pt");
                 		GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, nHLTmx, recohtbins, false, false);
 				//GenBinning2D[iet][id][ij][ik]->AddAxis(Axisname, PTbins, recohtbins2D, false, false);
@@ -2320,7 +2466,7 @@ iEvent.getByToken(genjetToken_,genjets);
 }
 
 //Jet Matching - Leading & Sub-Leading
-
+#ifdef MATCHING
 bool jet_matches = false;
 
 if (ak4PFJets.isValid() && ak4PFJets->size() >= 2 && genjets.isValid() && genjets->size() >= 2) {
@@ -2474,190 +2620,7 @@ if (ak4PFJets.isValid() && ak4PFJets->size() >= 2 && genjets.isValid() && genjet
 	}
 }
 
-/*
-if(jet_matches){
-    cout << "Matched Reco Jets:" <<endl;
-    for (unsigned int ijet = 0; ijet < ak4PFJets->size(); ijet++) {
-        if((*ak4PFJets)[ijet].pt()<30 || abs((*ak4PFJets)[ijet].eta())>2.1) continue;
-
-        if(ijet==0){cout << "Leading Jet pt : " << (*ak4PFJets)[ijet].pt() <<endl;}
-        else if(ijet==1){cout << "Sub-Leading Jet pt : " << (*ak4PFJets)[ijet].pt() <<endl;}
-    }
-
-    cout << "Matched Gen Jets:" <<endl;
-    for (unsigned int igjet = 0; igjet < genjets->size(); igjet++) {
-        if((*genjets)[igjet].pt()<30 || abs((*genjets)[igjet].eta())>2.1) continue;
-        if(igjet==0){cout << "Leading Jet pt : " << (*genjets)[igjet].pt() <<endl;}
-        else if(igjet==1){cout << "Sub-Leading Jet pt : " << (*genjets)[igjet].pt() <<endl;}
-    }
-}
-*/
-/*
-if(jet_matches && part_matches){
-    
-    cout << "Matched Reco Jets & Particles:" <<endl;
-    for (unsigned int ijet = 0; ijet < ak4PFJets->size(); ijet++) {
-        if((*ak4PFJets)[ijet].pt()<30 || abs((*ak4PFJets)[ijet].eta())>2.1) continue;
-
-	std::vector<reco::CandidatePtr> daus((*ak4PFJets)[ijet].daughterPtrVector());
-        std::sort(daus.begin(), daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
-
-        if(ijet==0){cout << "Leading Jet pt : " << (*ak4PFJets)[ijet].pt() <<endl;
-		for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
-                const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
-		cout<<"Leading RecoJet Particle check before matching : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-                for (unsigned int imatched = 0; imatched < matched_recoparts.size(); ++imatched) {
-                const pat::PackedCandidate& matched_recocand = static_cast<const pat::PackedCandidate&>(*matched_recoparts[imatched]);
-
-                if (recocand.charge() == matched_recocand.charge() && deltaR(recocand, matched_recocand) < 1e-4) {
-		cout << "Leading RecoJet Particle check : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-			}
-		}
-	}
-       }else if(ijet==1){cout << "Sub-Leading Jet pt : " << (*ak4PFJets)[ijet].pt() <<endl;
-		for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
-                const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
-		cout << "Sub-Leading RecoJet particle check before matching : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-                for (unsigned int imatched = 0; imatched < matched_recoparts.size(); ++imatched) {
-                const pat::PackedCandidate& matched_recocand = static_cast<const pat::PackedCandidate&>(*matched_recoparts[imatched]);
-
-                if (recocand.charge() == matched_recocand.charge() && deltaR(recocand, matched_recocand) < 1e-4) {
-		cout << "Sub-Leading RecoJet particle check : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-					}
-				}
-			}
-		}
-	}
-
-    cout << "Matched Gen Jets & Particles:" <<endl;
-    for (unsigned int igjet = 0; igjet < genjets->size(); igjet++) {
-        if((*genjets)[igjet].pt()<30 || abs((*genjets)[igjet].eta())>2.1) continue;
-
-	std::vector<reco::CandidatePtr> daus((*genjets)[igjet].daughterPtrVector());
-        std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
-
-        if(igjet==0){cout << "Leading Jet pt : " << (*genjets)[igjet].pt() <<endl;
-			for (unsigned int igen = 0; igen < daus.size(); ++igen) {
-                	const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
-			cout << "Leading GenJet particle check before matching: pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;
-                        for (unsigned int imatched = 0; imatched < matched_genparts.size(); ++imatched) {
-                        const pat::PackedCandidate& matched_gencand = static_cast<const pat::PackedCandidate&>(*matched_genparts[imatched]);
-
-                        if (gencand.charge() == matched_gencand.charge() && deltaR(gencand, matched_gencand) < 1e-4) {
-			cout << "Leading GenJet particle check at matching: pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;				
-			}
-		}
-	}	
-        }else if(igjet==1){cout << "Sub-Leading Jet pt : " << (*genjets)[igjet].pt() <<endl;
-			for (unsigned int igen = 0; igen < daus.size(); ++igen) {
-                        const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
-			cout << "Sub-Leading GenJet particle check before matching: pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;
-                        for (unsigned int imatched = 0; imatched < matched_genparts.size(); ++imatched) {
-                        const pat::PackedCandidate& matched_gencand = static_cast<const pat::PackedCandidate&>(*matched_genparts[imatched]);
-
-                        if (gencand.charge() == matched_gencand.charge() && deltaR(gencand, matched_gencand) < 1e-4) {
-
-			cout << "Sub-Leading GenJet particle check at matching: pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;
-					}
-				}
-    			}
-		}
-	}
-}
-*/
-/*
-cout<<"////////////////////////////////////////////////////"<<endl;
-//Jet Matching and particle Matching Testing
-
-std::vector<reco::CandidatePtr> matched_lead_recoparts;
-std::vector<reco::CandidatePtr> matched_lead_genparts;
-std::vector<reco::CandidatePtr> matched_sublead_recoparts;
-std::vector<reco::CandidatePtr> matched_sublead_genparts;
-
-if (ak4PFJets.isValid() && ak4PFJets->size() >= 2 && genjets.isValid() && genjets->size() >= 2) {
-
-    std::vector<bool> matched_recojets(ak4PFJets->size(), false);
-    std::vector<bool> matched_genjets(genjets->size(), false);
-     
-	for (unsigned ijet = 0; ijet <2; ijet++) {
-        for (unsigned igjet = 0; igjet <2; igjet++) {
-
-                if ((*ak4PFJets)[ijet].pt()<30 || abs((*ak4PFJets)[ijet].eta())>2.1 || (*genjets)[igjet].pt()<30 || abs((*genjets)[igjet].eta())>2.1) continue;
-                if (matched_recojets[ijet] || matched_genjets[igjet]) continue;
-
-	if(ijet==0){
-        double jetdR = deltaR((*ak4PFJets)[ijet], (*genjets)[igjet]);
-            if (jetdR < 0.2) {
-		cout<<" SB LEAD RECO JET PT : "<<(*ak4PFJets)[ijet].pt()<<endl;
-		cout<<" SB LEAD GEN JET PT  : "<<(*genjets)[igjet].pt()<<endl;
-                
-		std::vector<reco::CandidatePtr> recodaus((*ak4PFJets)[ijet].daughterPtrVector());
-                std::sort(recodaus.begin(), recodaus.end(), [](const reco::CandidatePtr& p1, const reco::CandidatePtr& p2) { return p1->pt() > p2->pt(); });
-
-                std::vector<reco::CandidatePtr> gendaus((*genjets)[igjet].daughterPtrVector());
-                std::sort(gendaus.begin(), gendaus.end(), [](const reco::CandidatePtr& p1, const reco::CandidatePtr& p2) { return p1->pt() > p2->pt(); });
-
-                std::vector<bool> matched_recodaus(recodaus.size(), false);
-                std::vector<bool> matched_gendaus(gendaus.size(), false);
-
-                for (unsigned int ireco = 0; ireco < recodaus.size(); ++ireco) {
-                    const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*recodaus[ireco]);
-
-                    for (unsigned int igen = 0; igen < gendaus.size(); ++igen) {
-                        const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*gendaus[igen]);
-                        if(recocand.pt()<1.0 || abs(recocand.eta())>2.5 || gencand.pt()<1.0 || abs(gencand.eta())>2.5) continue;
-                        double partdR = deltaR(recocand, gencand);
-                        if (partdR < 0.05 && recocand.charge() == gencand.charge() && !matched_recodaus[ireco] && !matched_gendaus[igen]) {
-                            matched_recodaus[ireco] = true;
-                            matched_gendaus[igen] = true;
-                            matched_lead_recoparts.push_back(recodaus[ireco]);
-                            matched_lead_genparts.push_back(gendaus[igen]);
- 			cout << "Leading RecoJet Particle check : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-			cout << "Leading GenJet particle check  : pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;                          
-			cout<<"----------------------------------------"<<endl; 
-                                                        }
-                                                }
-                                        }
-				}
-			}
-	if(ijet==1){
-        double jetdR = deltaR((*ak4PFJets)[ijet], (*genjets)[igjet]);
-            if (jetdR < 0.2) {
-                cout<<" SB SUB-LEAD RECO JET PT : "<<(*ak4PFJets)[ijet].pt()<<endl;
-                cout<<" SB SUB-LEAD GEN JET PT  : "<<(*genjets)[igjet].pt()<<endl;
-                std::vector<reco::CandidatePtr> recodaus((*ak4PFJets)[ijet].daughterPtrVector());
-                std::sort(recodaus.begin(), recodaus.end(), [](const reco::CandidatePtr& p1, const reco::CandidatePtr& p2) { return p1->pt() > p2->pt(); });
-
-                std::vector<reco::CandidatePtr> gendaus((*genjets)[igjet].daughterPtrVector());
-                std::sort(gendaus.begin(), gendaus.end(), [](const reco::CandidatePtr& p1, const reco::CandidatePtr& p2) { return p1->pt() > p2->pt(); });
-
-                std::vector<bool> matched_recodaus(recodaus.size(), false);
-                std::vector<bool> matched_gendaus(gendaus.size(), false);
-
-                for (unsigned int ireco = 0; ireco < recodaus.size(); ++ireco) {
-                    const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*recodaus[ireco]);
-
-                    for (unsigned int igen = 0; igen < gendaus.size(); ++igen) {
-                        const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*gendaus[igen]);
-                        if(recocand.pt()<1.0 || abs(recocand.eta())>2.5 || gencand.pt()<1.0 || abs(gencand.eta())>2.5) continue;
-                        double partdR = deltaR(recocand, gencand);
-                        if (partdR < 0.05 && recocand.charge() == gencand.charge() && !matched_recodaus[ireco] && !matched_gendaus[igen]) {
-                            matched_recodaus[ireco] = true;
-                            matched_gendaus[igen] = true;
-			    matched_sublead_recoparts.push_back(recodaus[ireco]);
-                            matched_sublead_genparts.push_back(gendaus[igen]);
-			 cout <<"Sub-Leading RecoJet Particle check : pt: " << recocand.pt() << " eta: " << recocand.eta() << " ID: " << recocand.pdgId() << " charge: " << recocand.charge() << endl;
-                        cout << "Sub-Leading GenJet particle check  : pt: " << gencand.pt() << " eta: " << gencand.eta() << " ID: " << gencand.pdgId() << " charge: " << gencand.charge() << endl;
-			cout<<"----------------------------------------"<<endl;
-				}
-			}
-			}
-		}
-		}	
-		}
-	}
-}
-*/
+#endif
 
 if(isMC) {
 
@@ -2987,6 +2950,7 @@ if(isMC) {
 			recojet1_pt = tmp3v.perp();
 			//cout<<" hasTrackDetails "<<pfcand.hasTrackDetails()<<" trackHighPurity "<<pfcand.trackHighPurity()<<"numberOfHits" << (pfcand.numberOfHits())<<" fromPV "<<pfcand.fromPV()<<" dz "<<pfcand.dz()<<endl;
 			ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik])); 
+			ijet1candsmom_den[ik] += (cand3v.perp());
 
 			ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));	
 			ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3013,6 +2977,7 @@ if(isMC) {
 			recojet2_pt = tmp3v.perp();
                         
 			ijet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+			ijet2candsmom_den[ik] += (cand3v.perp());
 		
 			ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                         ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3029,6 +2994,7 @@ if(isMC) {
 //cout<<"--------RECO START---------"<<endl;
 if(ijet==0){
         for (int ik=0; ik<10; ik++){
+#ifdef MATCHING
 	if(jet_matches){
 		for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
                 const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
@@ -3085,11 +3051,33 @@ if(ijet==0){
 			}
 		}
 	//cout<<"calculation of Lead Reco JCO : "<<ijet1candsmom[ik]<<" ik "<<ik<<endl;
+#else
+for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
+                const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
+                int charge = recocand.charge();
+                        Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
+                        if(isrc==0){
+                                recojet1_pt = tmp3v.perp();
+
+                                ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				ijet1candsmom_den[ik] += (cand3v.perp());
+
+                                ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                                ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                                ijet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                                ijet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+#endif
 	}
 }		
 
 if(ijet==1){
 	for (int ik=0; ik<10; ik++){
+#ifdef MATCHING
 	if(jet_matches){
                 for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
                 const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
@@ -3148,9 +3136,122 @@ if(ijet==1){
 			}
 		}
 	//cout<<"calculation of Sub-Lead Reco JCO : "<<ijet2candsmom[ik]<<" ik "<<ik<<endl;	
+#else
+for (unsigned int ireco = 0; ireco < daus.size(); ++ireco) {
+                const pat::PackedCandidate& recocand = static_cast<const pat::PackedCandidate&>(*daus[ireco]);
+                int charge = recocand.charge();
+                Hep3Vector cand3v(recocand.px(), recocand.py(), recocand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && recocand.charge()!=0){
+                if(isrc==0){
+		ijet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+		ijet2candsmom_den[ik] += (cand3v.perp());
+
+                        ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        ijet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+			}
+		}
+	}
+#endif
 	}
 }
 //cout<<"-------------RECO END-------------------------"<<endl;
+/*
+//Jet Matching
+if(ijet==0){
+        for (int ik=0; ik<10; ik++){
+        if(jet_matches){
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+		const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+                        recojet1_pt = tmp3v.perp();
+			
+			ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik])); 
+                        ijet1candsmom_den[ik] += (cand3v.perp());
+
+                        ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));       
+                        ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+                        
+                        ijet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+	}else{
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+		const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+                        recojet1_pt = tmp3v.perp();
+	
+			ijet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        ijet1candsmom_den[ik] += (cand3v.perp());
+
+                        ijet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        ijet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+	}
+}
+}
+
+if(ijet==1){
+        for (int ik=0; ik<10; ik++){
+        if(jet_matches){
+                for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+                const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+			recojet2_pt = tmp3v.perp();
+                        
+                        ijet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        ijet2candsmom_den[ik] += (cand3v.perp());
+                
+                        ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        ijet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));                      
+                                        }
+                                }
+                        }
+	}else{
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+ 	       	const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
+        	int charge = pfcand.charge();
+              	Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+                        recojet2_pt = tmp3v.perp();
+
+                        ijet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        ijet2candsmom_den[ik] += (cand3v.perp());
+
+                        ijet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        ijet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        ijet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+	}
+}
+}
+*/
 
 		//  if(isEta && isPt) {ncount++;}
 	   	//  }//if (abs((*ak4PFJets)[jetindx[isrc][0]].eta())<etarange[iet] && abs((*ak4PFJets)[jetindx[isrc][1]].eta())<etarange[iet])
@@ -3469,6 +3570,7 @@ if(ijet==1){
                         	genrecojet1_pt = tmp3v.perp();
 				
 				igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				igenjet1candsmom_den[ik] += (cand3v.perp());
 
 				igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
 	                        igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3495,6 +3597,7 @@ if(ijet==1){
 				genrecojet2_pt = tmp3v.perp();
 	
 				igenjet2candsmom[ik] += candsmom(charge, cand3v.perp(), kappa[ik]);
+				igenjet2candsmom_den[ik] += (cand3v.perp());
 
 				igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
                                 igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
@@ -3510,6 +3613,7 @@ if(ijet==1){
 //cout<<"--------GEN START---------"<<endl;
 		if (ijet==0){
                         for (int ik=0; ik<10; ik++){
+#ifdef MATCHING
 			if(jet_matches){	
 				for (unsigned int igen = 0; igen < daus.size(); ++igen) {
                 		const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
@@ -3570,10 +3674,33 @@ if(ijet==1){
 			}
 		}
 	//cout<<"calculation of Lead Gen JCO : "<<igenjet1candsmom[ik]<<" ik "<<ik<<endl;	
+#else
+for (unsigned int igen = 0; igen < daus.size(); ++igen) {
+                        const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
+
+                        int charge = gencand.charge();
+                        Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
+                        if(isrc==0){
+                                genrecojet1_pt = tmp3v.perp();
+
+                                igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+				igenjet1candsmom_den[ik] += (cand3v.perp());
+
+                                igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                                igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                                igenjet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                                igenjet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+#endif
 	}
 }
 		if(ijet==1){
 			for (int ik=0; ik<10; ik++){
+#ifdef MATCHING
 			if(jet_matches){
                                 for (unsigned int igen = 0; igen < daus.size(); ++igen) {
                                 const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
@@ -3632,10 +3759,122 @@ if(ijet==1){
 			}
 		}
 	//cout<<"calculation of Sub-Lead Gen JCO : "<<igenjet2candsmom[ik]<<" ik "<<ik<<endl;
+#else
+for (unsigned int igen = 0; igen < daus.size(); ++igen) {
+                        const pat::PackedCandidate& gencand = static_cast<const pat::PackedCandidate&>(*daus[igen]);
+
+                        int charge = gencand.charge();
+                        Hep3Vector cand3v(gencand.px(), gencand.py(), gencand.pz());
+                        if(cand3v.perp()>1.0 && abs(cand3v.eta()<2.5) && gencand.charge()!=0){
+                        if(isrc==0){
+			igenjet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+			igenjet2candsmom_den[ik] += (cand3v.perp());
+
+                                        igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                                        igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                                        igenjet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                                        igenjet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+			}
+		}
+#endif
 	}
 }
 //cout<<"--------------GEN END------------------------"<<endl;
+/*
+if (ijet==0){
+	for (int ik=0; ik<10; ik++){
+	if(jet_matches){        
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+                const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+                	genrecojet1_pt = tmp3v.perp();
+                                
+                        igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        igenjet1candsmom_den[ik] += (cand3v.perp());
 
+                        igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        igenjet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                       	igenjet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+                	        }
+                        }
+        	}
+        }else{
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+                const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+	                genrecojet1_pt = tmp3v.perp();
+                                
+                        igenjet1candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        igenjet1candsmom_den[ik] += (cand3v.perp());
+
+                        igenjet1_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet1_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        igenjet1_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet1_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+				}
+                	}
+		}
+	}
+}
+}
+
+if(ijet==1){
+	for (int ik=0; ik<10; ik++){
+        if(jet_matches){
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+                const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+	                genrecojet2_pt = tmp3v.perp();
+        
+                        igenjet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        igenjet2candsmom_den[ik] += (cand3v.perp());
+
+                        igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        igenjet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+                        	}
+			}
+		}
+	}else{
+		for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
+                const pat::PackedCandidate &pfcand = static_cast<const pat::PackedCandidate &>(*daus[i2]);
+                int charge = pfcand.charge();
+                Hep3Vector cand3v(pfcand.px(), pfcand.py(), pfcand.pz());
+                if(cand3v.perp()>1.0 && abs(cand3v.eta())<2.5 && charge !=0){
+                if(isrc==0){
+	                genrecojet2_pt = tmp3v.perp();
+
+                        igenjet2candsmom[ik] += charge*(pow(cand3v.perp(), kappa[ik]));
+                        igenjet2candsmom_den[ik] += (cand3v.perp());
+
+                        igenjet2_long_num[ik] += (charge*(dotProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet2_long_den[ik] += (dotProductPower(cand3v,tmp3v,kappa[ik]));
+
+                        igenjet2_tran_num[ik] += (charge*(crossProductPower(cand3v,tmp3v,kappa[ik])));
+                        igenjet2_tran_den[ik] += (crossProductPower(cand3v,tmp3v,kappa[ik]));
+                        	}
+			}
+		}
+	}
+}
+}
+*/
 		  //  if (isEta && isPt) {ncount++;}
 		} // if (abs((*genjets)[genjetindx[isrc][0]].eta())<etarange[iet] && 
 		//								abs((*genjets)[genjetindx[isrc][1]].eta())<etarange[iet])
@@ -3799,104 +4038,18 @@ if(ijet==1){
                 //cout<<"GEN SUB-LEAD JCO : "<<(igenjet2candsmom[ik]/(pow(genrecojet2_pt,kappa[ik])))<<" PT weighteg : "<<igenjet2candsmom[ik]<<" eff pt : "<<(pow(genrecojet2_pt,kappa[ik]))<<" kappa : "<<ik<<endl;
 		}
 
-/*
-bool MOM_passed[ndef][njet][nkappa]={{{false}}};
-for(int id=0; id<ndef; id++){
-	for(int ij=0; ij<njet; ij++){
-		for(int ik=0; ik<nkappa; ik++){
-			if (recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0){
-			MOM_passed[id][ij][ik]=true;
-			}
-			//else{MOM_passed=false;}
-		}
-	}
-}
 
-if(!MOM_passed[ndef][njet][nkappa]) return;
-
-
-bool matched_jet=false;
-//double R =0.0;
-for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
-	if (ijet>1) break;
-		for(unsigned igjet = 0; igjet != genjets->size(); igjet++){
-  			double dR = deltaR((*genjets)[igjet], (*ak4PFJets)[ijet]);
-			//cout <<"dR "<<dR<<endl;
-				if (dR < 0.2){matched_jet=true;
-					break;
-					} 
-			//cout<<"test "<<dR<<endl;
-			//R = dR;
-			}
-		}
-	
-if(!matched_jet) return;
-*/
-
-/*
-bool leading_jet_matched1 = false, subleading_jet_matched1 = false;
-
-for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
-    std::vector<const pat::PackedCandidate*> jet_particles;
-    std::vector<const reco::GenParticle*> gen_particles;
-    
-    std::vector<reco::CandidatePtr> daus((*ak4PFJets)[ijet].daughterPtrVector());
-    std::sort(daus.begin(), daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
-    for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
-    const pat::PackedCandidate &pfcand = dynamic_cast<const pat::PackedCandidate &>(*daus[i2]);
-            jet_particles.push_back(&pfcand);
-    }
-    for(unsigned igjet = 0; igjet != genjets->size(); igjet++){
-        std::vector<reco::CandidatePtr> daus((*genjets)[igjet].daughterPtrVector());
-        std::sort(daus.begin(),daus.end(), [](const reco::CandidatePtr &p1, const reco::CandidatePtr &p2) { return p1->pt() > p2->pt(); });
-        for (unsigned int i2 = 0; i2< daus.size(); ++i2) {
-            const reco::GenParticle &gen_particle = static_cast<const reco::GenParticle &>(*daus[i2]);
-            gen_particles.push_back(&gen_particle);
-        }
-    }
-    for (auto const& jet_particle : jet_particles) {
-        for (auto const& gen_particle : gen_particles) {
-            double dR = deltaR(*gen_particle, *jet_particle);
-	    //cout<<dR<<endl;
-            if (dR < 0.4) {
-                if (ijet == 0) {
-                    leading_jet_matched1 = true;
-                } else if (ijet == 1) {
-                    subleading_jet_matched1 = true;
-                }
-            }
-        }    
-    }
-}
-
-if(!leading_jet_matched1 && !subleading_jet_matched1) return;
-
-
-bool leading_jet_matched = false, subleading_jet_matched = false;
-
-for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++) {
-    for(unsigned igjet = 0; igjet != genjets->size(); igjet++){
-        double dR = deltaR((*genjets)[igjet], (*ak4PFJets)[ijet]);
-        if (dR < 0.2) {
-            if (ijet == 0) {
-                leading_jet_matched = true;
-            } else if (ijet == 1) {
-                subleading_jet_matched = true;
-            }
-            break;
-        }
-    }
-}
-
-if(!leading_jet_matched || !subleading_jet_matched) return;
-*/
 //RM for Leading Jet-pt
 for (int iet=0; iet<njetetamn; iet++){
         if(isMC){
                 for (int isrc=0; isrc<nGenReso; isrc++) {
                         if (isrc==0 && isReconstruct){
                                 //if( irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && matched_jet){
+#ifdef MATCHING
 				if( igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && jet_matches){
+#else
+				if( igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn){
+#endif
                                         if(ak4PFJets->size()>=2 && genjets->size()>=2){
                                         	//RM_test[irecohtjec[isrc]][iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
 						RM_test[iet]->Fill(recojet1_pt,genrecojet1_pt,weighttrg);
@@ -3942,7 +4095,11 @@ if(recojet1_test<=0 || genjet1_test<=0) continue;
 					}
 			}
 		if (isrc==0 && isReconstruct){
+#ifdef MATCHING
                 	if(isRecoJCO1D_test && isGenJCO1D_test && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && jet_matches /*&& recojet1_test>0 && genjet1_test>0 && matched_jet*/){
+#else
+		if(isRecoJCO1D_test && isGenJCO1D_test && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& jet_matches && recojet1_test>0 && genjet1_test>0 && matched_jet*/){
+#endif
                         	if(ak4PFJets->size()>=2 && genjets->size()>=2){
 					h_RM_d0j0k1[irecohtjec[isrc]][iet]->Fill(ijet1candsmomk1/recojet1_test, igenjet1candsmomk1/genjet1_test,weighttrg);
 					h_RM_d0j0k6[irecohtjec[isrc]][iet]->Fill(ijet1candsmomk6/pow(recojet1_test,0.6), igenjet1candsmomk6/pow(genjet1_test,0.6),weighttrg);
@@ -4003,7 +4160,11 @@ if(recojet1_test<=0 || genjet1_test<=0) continue;
                                         }
                         	}
                 if (isrc==0 && isReconstruct){
+#ifdef MATCHING
                         if(isRecoJCO2D_test && isGenJCO2D_test && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && jet_matches /*&& recojet1_test>0 && genjet1_test>0 && matched_jet*/){
+#else
+			if(isRecoJCO2D_test && isGenJCO2D_test && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& jet_matches && recojet1_test>0 && genjet1_test>0 && matched_jet*/){
+#endif
                                 if(ak4PFJets->size()>=2 && genjets->size()>=2){
 						int irecbin_d0j0k1 = RecoBinning2D_d0j0k1[iet]->GetGlobalBinNumber(ijet1candsmomk1/recojet1_test,leadingptjec[isrc]);
 						int igenbin_d0j0k1 = GenBinning2D_d0j0k1[iet]->GetGlobalBinNumber(igenjet1candsmomk1/genjet1_test,leadgenptres[isrc]);
@@ -4065,7 +4226,12 @@ for(int ik=0; ik<nkappa; ik++){
                                                         }
                                                 }
 					if (isrc==0 && isReconstruct){
+#ifdef MATCHING
                                                 if( isRecoJCO1D[iet][id][ij][ik] && isGenJCO1D[iet][id][ij][ik] && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && jet_matches){
+#else
+						if( isRecoJCO1D[iet][id][ij][ik] && isGenJCO1D[iet][id][ij][ik] && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn){
+#endif
+
                                                 if(ak4PFJets->size()>=2 && genjets->size()>=2){
 							h_RM[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik],weighttrg);
                                                         h_RM_WOW[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik]);
@@ -4136,7 +4302,11 @@ for(int ik=0; ik<nkappa; ik++){
 						}
 					if (isrc==0 && isReconstruct){
 						//if( isRecoJCO && isGenJCO && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0 && matched_jet){
+#ifdef MATCHING
 						if( isRecoJCO2D[iet][id][ij][ik] && isGenJCO2D[iet][id][ij][ik] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && jet_matches /*&& abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.1 && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0*/){
+#else
+if( isRecoJCO2D[iet][id][ij][ik] && isGenJCO2D[iet][id][ij][ik] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn /*&& jet_matches && abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.1 && recomomJCO[id][ij][ik]>0 && genmomJCO[id][ij][ik]>0*/){
+#endif
 						if(ak4PFJets->size()>=2 && genjets->size()>=2){
 							h_RM_2DC[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik],weighttrg);
 							h_RM_2DC_WOW[irecohtjec[isrc]][iet][id][ij][ik]->Fill(RecoJCO[id][ij][ik],GenJCO[id][ij][ik]);
@@ -4221,7 +4391,11 @@ if(recomomJCO[id][ij][ik]<=0 || genmomJCO[id][ij][ik]<=0) continue;
         if(isMC){
                 for (int isrc=0; isrc<nGenReso; isrc++) {
                         if (isrc==0 && isReconstruct){
+#ifdef MATCHING
                                 if(igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.3 && jet_matches){
+#else
+				if(igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && abs(RecoJCO[id][ij][ik]-GenJCO[id][ij][ik])<=0.3 ){
+#endif
                                 	if(ak4PFJets->size()>=2 && genjets->size()>=2){
                                                 int irecbin = RecoBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(RecoJCO[id][ij][ik],leadingptjec[isrc]);
                                                 int igenbin = GenBinning2D[iet][id][ij][ik]->GetGlobalBinNumber(GenJCO[id][ij][ik],leadgenptres[isrc]);
